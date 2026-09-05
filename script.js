@@ -558,7 +558,7 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
 
     message2:
-      "Bà đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này một chút. Có bà ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+      "Bà đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
   },
 
   // Tên / Tui
@@ -575,7 +575,7 @@ const guestTypes = {
     message1:
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Tiến ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
     message2:
-      "Tiến đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này một chút. Có Tiến ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+      "Tiến đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Tiến ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
   },
 
   // Gia đình

@@ -18,53 +18,64 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- THANK YOU POPUP -->
-<div id="thankYouPopup" class="thankyou-overlay">
-
-    <div class="thankyou-popup">
-
-        <button class="thankyou-close" onclick="closeThankYou()">
-            ×
-        </button>
-
-        <div class="thankyou-icon">
-            💗
-        </div>
-
-        <div class="thankyou-sparkles">
-            ✦　♡　✦
-        </div>
-
-        <span class="thankyou-label">
-            THANK YOU
-        </span>
-
-        <h2 id="thankYouTitle">
-            Hẹn gặp bạn nhé!
-        </h2>
-
-        <p id="thankYouText">
-            Cảm ơn bạn đã dành thời gian<br>
-            và nhận lời tham dự lễ tốt nghiệp của mình.
-        </p>
-
-        <div class="thankyou-message">
-            🎓 <span id="thankYouMessage">Hẹn gặp bạn tại ngày đặc biệt này!</span>
-        </div>
-
-        <button class="thankyou-ok" onclick="closeThankYou()">
-            Iu quá, hẹn gặp nhé 💕
-        </button>
-
-    </div>
-
-</div>
-
 <body>
 
     <!-- =====================================================
-     DECORATIONS
-===================================================== -->
+         THANK YOU POPUP
+    ====================================================== -->
+
+    <div id="thankYouPopup" class="thankyou-overlay">
+
+        <div class="thankyou-popup">
+
+            <button
+                class="thankyou-close"
+                onclick="closeThankYou()">
+                ×
+            </button>
+
+            <div class="thankyou-icon">
+                💗
+            </div>
+
+            <div class="thankyou-sparkles">
+                ✦　♡　✦
+            </div>
+
+            <span class="thankyou-label">
+                THANK YOU
+            </span>
+
+            <h2 id="thankYouTitle">
+                Hẹn gặp bạn nhé!
+            </h2>
+
+            <p id="thankYouText">
+                Cảm ơn bạn đã dành thời gian<br>
+                và nhận lời tham dự lễ tốt nghiệp của mình.
+            </p>
+
+            <div class="thankyou-message">
+                🎓
+                <span id="thankYouMessage">
+                    Hẹn gặp bạn tại ngày đặc biệt này!
+                </span>
+            </div>
+
+            <button
+                class="thankyou-ok"
+                onclick="closeThankYou()">
+                Iu quá, hẹn gặp nhé 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DECORATIONS
+    ====================================================== -->
 
     <div class="global-decor decor-1">✦</div>
     <div class="global-decor decor-2">🌸</div>
@@ -73,293 +84,15 @@
 
 
     <!-- =====================================================
-     01. KHỞI ĐỘNG
-===================================================== -->
+         01. PHONG BÌ
+    ====================================================== -->
 
-    <section id="loadingScreen" class="page active">
-
-        <div class="loading-sticker sticker-left">🌷</div>
-        <div class="loading-sticker sticker-right">🎓</div>
-
-        <div class="loading-orbit orbit-1">✦</div>
-        <div class="loading-orbit orbit-2">✧</div>
-        <div class="loading-orbit orbit-3">♡</div>
-
-        <div class="loading-box">
-
-            <div class="loading-icon">
-                🎓
-            </div>
-
-            <div class="loading-small">
-                A LITTLE SURPRISE FOR YOU
-            </div>
-
-            <h1 class="loading-title">
-                Một điều đặc biệt<br>
-                đang được mở ra...
-            </h1>
-
-            <p class="loading-subtitle">
-                Hành trình tốt nghiệp • Hà Tường Vy
-            </p>
-
-            <div class="progress-container">
-                <div id="progressBar" class="progress-bar"></div>
-            </div>
-
-            <p id="progressPercent" class="progress-percent">0%</p>
-
-            <p id="loadingText" class="loading-text">
-                Đang chuẩn bị một điều đặc biệt...
-            </p>
-
-            <div class="loading-status">
-
-                <span class="status-item">
-                    <b>✓</b>
-                    <span>Hành trình</span>
-                </span>
-
-                <span class="status-item">
-                    <b>✓</b>
-                    <span>Kỷ niệm</span>
-                </span>
-
-                <span class="status-item">
-                    <b>✓</b>
-                    <span>Lời mời</span>
-                </span>
-
-            </div>
-
-            <button id="startBtn" class="btn btn-primary loading-btn" onclick="startInvitation()">
-                MỞ HÀNH TRÌNH
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     02. HÀNH TRÌNH
-===================================================== -->
-
-    <section id="journeyScreen" class="page">
-
-        <div class="journey-decor flower-a">🌸</div>
-        <div class="journey-decor star-a">✦</div>
-        <div class="journey-decor cap-a">🎓</div>
-
-        <div class="story-header">
-
-            <span class="section-label">
-                MỘT HÀNH TRÌNH
-            </span>
-
-            <h1>
-                4,5 năm<br>
-                không chỉ là những bài học.
-            </h1>
-
-            <p>
-                Có những ngày mệt mỏi, những lần cố gắng<br>
-                và rất nhiều khoảnh khắc đáng nhớ.
-            </p>
-
-        </div>
-
-
-        <div class="journey">
-
-            <div class="journey-line"></div>
-
-
-            <!-- ITEM 1 -->
-
-            <div class="journey-item left">
-
-                <div class="journey-year">
-                    01
-                </div>
-
-                <div class="journey-note">
-
-                    <span class="mini-sticker">
-                        🌱
-                    </span>
-
-                    <span class="note-label">
-                        THE BEGINNING
-                    </span>
-
-                    <h2>
-                        Những ngày<br>
-                        đầu tiên
-                    </h2>
-
-                    <p>
-                        Bắt đầu một hành trình mới,
-                        với rất nhiều điều chưa biết
-                        và những ước mơ còn đang ấp ủ.
-                        Những ngày đầu có chút bỡ ngỡ,
-                        mọi thứ đều mới mẻ,
-                        từ giảng đường, bạn bè
-                        đến những điều mình chưa từng trải qua.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- ITEM 2 -->
-
-            <div class="journey-item right">
-
-                <div class="journey-year">
-                    02
-                </div>
-
-                <div class="journey-note pink">
-
-                    <span class="mini-sticker">
-                        📚
-                    </span>
-
-                    <span class="note-label">
-                        THE JOURNEY
-                    </span>
-
-                    <h2>
-                        Học hỏi<br>
-                        và trưởng thành
-                    </h2>
-
-                    <p>
-                        Từng môn học, từng deadline,
-                        từng lần làm sai rồi làm lại.
-                        Mình dần quen với những ngày bận rộn,
-                        học cách cố gắng và tự chịu trách nhiệm
-                        với những lựa chọn của mình.
-                        Và may mắn hơn cả,
-                        là có những người bạn đồng hành,
-                        cùng nhau học tập, sẻ chia
-                        và tạo nên những kỷ niệm thật đẹp.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- ITEM 3 -->
-
-            <div class="journey-item left">
-
-                <div class="journey-year">
-                    03
-                </div>
-
-                <div class="journey-note yellow">
-
-                    <span class="mini-sticker">
-                        💻
-                    </span>
-
-                    <span class="note-label">
-                        GROWING UP
-                    </span>
-
-                    <h2>
-                        Bước ra khỏi<br>
-                        vùng an toàn
-                    </h2>
-
-                    <p>
-                        Thực tập, làm việc,
-                        tự mình giải quyết những vấn đề gặp phải.
-                        Có những điều trước đây còn bỡ ngỡ,
-                        thì giờ đã có thể tự mình làm được.
-                        Những đêm thức khuya,
-                        những lần loay hoay tìm cách giải quyết,
-                        tất cả dần trở thành những trải nghiệm
-                        giúp mình hiểu hơn về bản thân
-                        và về con đường mình muốn bước tiếp.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- ITEM 4 -->
-
-            <div class="journey-item right">
-
-                <div class="journey-year">
-                    04
-                </div>
-
-                <div class="journey-note purple">
-
-                    <span class="mini-sticker">
-                        🎓
-                    </span>
-
-                    <span class="note-label">
-                        THE END
-                    </span>
-
-                    <h2>
-                        Chặng đường<br>
-                        đại học khép lại
-                    </h2>
-
-                    <p>
-                        4,5 năm đã đi qua,
-                        mang theo biết bao kỷ niệm
-                        mà có lẽ sau này mình vẫn nhớ mãi.
-                        Từ một sinh viên còn nhiều bỡ ngỡ,
-                        đến ngày hôm nay,
-                        mình đã có thể mỉm cười và nói rằng:
-                        “Mình đã làm được.”
-                        Một chặng đường khép lại,
-                        để một hành trình mới bắt đầu.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="screen-navigation">
-
-            <button class="nav-btn nav-back" onclick="showScreen('loadingScreen')">
-                ← Quay lại
-            </button>
-
-            <button class="nav-btn nav-next" onclick="openEnvelopeScreen()">
-                Tiếp tục →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-     03. PHONG BÌ
-===================================================== -->
-
-    <section id="envelopeScreen" class="page">
+    <section id="envelopeScreen" class="page active">
 
         <div class="envelope-bg-star e1">✦</div>
         <div class="envelope-bg-star e2">✧</div>
         <div class="envelope-bg-star e3">✨</div>
+
 
         <div class="envelope-title">
 
@@ -373,16 +106,20 @@
             </h1>
 
             <p>
-                Sau hành trình này,<br>
-                còn một điều mình muốn gửi đến bạn.
+                Có một điều mình muốn gửi đến bạn.
             </p>
 
         </div>
 
 
-        <div class="envelope-wrapper" onclick="openInvitation()">
+        <!-- ENVELOPE -->
+
+        <div
+            class="envelope-wrapper"
+            onclick="openInvitation()">
 
             <!-- Trái tim lấp lánh -->
+
             <span class="sparkle-heart heart-1">♥</span>
             <span class="sparkle-heart heart-2">♥</span>
             <span class="sparkle-heart heart-3">♥</span>
@@ -390,12 +127,17 @@
             <span class="sparkle-heart heart-5">♥</span>
             <span class="sparkle-heart heart-6">♥</span>
 
+
             <div class="envelope">
 
                 <div class="envelope-back"></div>
 
+
                 <div class="envelope-letter">
-                    <span>🎓</span>
+
+                    <span>
+                        🎓
+                    </span>
 
                     <strong>
                         LỄ TỐT NGHIỆP
@@ -404,40 +146,40 @@
                     <small>
                         HÀ TƯỜNG VY
                     </small>
+
                 </div>
+
 
                 <div class="envelope-body"></div>
 
                 <div class="envelope-flap"></div>
+
 
                 <div class="envelope-seal">
                     ✦
                 </div>
 
             </div>
+
         </div>
 
 
-        <button class="open-label" onclick="openInvitation()">
+        <button
+            class="open-label"
+            onclick="openInvitation()">
             ✨ Chạm vào phong bì để mở ✨
         </button>
-
-        <div class="screen-navigation">
-
-            <button class="nav-btn nav-back" onclick="showScreen('journeyScreen')">
-                ← Quay lại
-            </button>
-
-        </div>
 
     </section>
 
 
+
     <!-- =====================================================
-     04. THƯ MỜI
-===================================================== -->
+         02. THIỆP MỜI
+    ====================================================== -->
 
     <section id="invitationScreen" class="page">
+
 
         <div class="main-bg-decoration main-d1">
             🌸
@@ -453,6 +195,9 @@
 
 
         <div class="invitation-card">
+
+
+            <!-- Decorative corners -->
 
             <div class="card-corner corner-1">
                 🌷
@@ -471,7 +216,9 @@
             </div>
 
 
-            <!-- TOP -->
+            <!-- =================================================
+                 CARD TOP
+            ================================================== -->
 
             <div class="card-top">
 
@@ -496,7 +243,9 @@
             </div>
 
 
-            <!-- GRADUATE -->
+            <!-- =================================================
+                 GRADUATE
+            ================================================== -->
 
             <div class="graduate">
 
@@ -515,7 +264,9 @@
             </div>
 
 
-            <!-- GUEST -->
+            <!-- =================================================
+                 GUEST
+            ================================================== -->
 
             <div class="guest-box">
 
@@ -528,19 +279,25 @@
                 </span>
 
                 <h2>
-                    <span id="guestName">Bạn thân mến</span>
+                    <span id="guestName">
+                        Bạn thân mến
+                    </span>
                 </h2>
 
                 <p id="guestMessage">
-                    Mình mời bạn đến chung vui cùng mình trong ngày tốt nghiệp nhé.
+                    Mình mời bạn đến chung vui cùng mình
+                    trong ngày tốt nghiệp nhé.
                 </p>
 
             </div>
 
 
-            <!-- EVENT -->
+            <!-- =================================================
+                 EVENT INFORMATION
+            ================================================== -->
 
             <div class="event-info">
+
 
                 <div class="event-item">
 
@@ -599,7 +356,9 @@
             </div>
 
 
-            <!-- MESSAGE -->
+            <!-- =================================================
+                 MESSAGE
+            ================================================== -->
 
             <div class="message-box">
 
@@ -609,13 +368,14 @@
 
                 <p id="message1">
                     Có thể đây chỉ là một buổi lễ tốt nghiệp,
-                    nhưng với mình, đó là khoảnh khắc đánh dấu một hành trình dài đã đi qua.
+                    nhưng với mình, đó là khoảnh khắc
+                    đánh dấu một hành trình dài đã đi qua.
                 </p>
 
                 <p id="message2">
                     Mình rất mong được gặp bạn tại buổi lễ,
-                    để cùng nhau chia sẻ niềm vui và kỷ niệm đáng nhớ này.
-                    Mình sẽ chờ bạn đến chung vui và chứng kiến khoảnh khắc đặc biệt này nhé!
+                    để cùng nhau chia sẻ niềm vui
+                    và lưu lại một kỷ niệm đáng nhớ.
                 </p>
 
                 <span class="quote-mark end">
@@ -625,43 +385,38 @@
             </div>
 
 
-            <!-- BUTTONS -->
+            <!-- =================================================
+                 BUTTONS
+            ================================================== -->
 
             <div class="button-group">
 
-                <button class="btn btn-primary" onclick="showThankYou()">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="showThankYou()">
+
                     💗 MÌNH SẼ ĐẾN
+
                 </button>
 
-                <a class="btn btn-secondary"
+
+                <a
+                    class="btn btn-secondary"
                     href="https://www.google.com/maps/search/?api=1&query=Trường+Đại+học+Sài+Gòn+273+An+Dương+Vương"
-                    target="_blank" rel="noopener noreferrer">
+                    target="_blank"
+                    rel="noopener noreferrer">
+
                     📍 XEM ĐỊA ĐIỂM
+
                 </a>
 
             </div>
 
 
-            <!-- THANK YOU -->
-
-            <div id="thankYou" class="thank-you">
-
-                <div>
-                    🎉
-                </div>
-
-                <h3 id="thankYouTitle">
-                    Yeah yeah! Hẹn gặp bạn nhé!
-                </h3>
-
-                <p id="thankYouText">
-                    Cảm ơn bạn vì đã đến chung vui cùng mình.
-                </p>
-
-            </div>
-
-
-            <!-- FOOTER -->
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
 
             <div class="card-footer">
 
@@ -679,13 +434,6 @@
 
             </div>
 
-        </div>
-
-        <div class="screen-navigation invitation-navigation">
-
-            <button class="nav-btn nav-back" onclick="showScreen('envelopeScreen')">
-                ← Quay lại
-            </button>
 
         </div>
 
