@@ -1,0 +1,2866 @@
+/* =====================================================
+   GRADUATION INVITATION
+   HÀ TƯỜNG VY
+===================================================== */
+
+
+/* =====================================================
+   COLOR PALETTE
+===================================================== */
+
+:root {
+
+    --cream: #fff8f5;
+    --cream-soft: #fdf0ed;
+
+    --peach: #f4cfc8;
+    --peach-light: #f9e2dd;
+
+    --rose: #dfa3a0;
+    --rose-light: #f1c5c1;
+    --rose-dark: #a86f70;
+
+    --pink: #f6d8d6;
+    --pink-soft: #fdebea;
+
+    --sage: #b8c8b5;
+    --sage-soft: #e5ede1;
+
+    --brown: #705b59;
+    --brown-light: #9c8581;
+
+    --white-soft: #fffdfb;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--cream);
+
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--brown);
+
+    overflow: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s ease;
+
+    z-index: 1;
+}
+
+.page.active {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   GLOBAL DECOR
+===================================================== */
+
+.global-decor {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 100;
+}
+
+.decor-1 {
+
+    top: 8%;
+    left: 4%;
+
+    color: var(--rose);
+
+    font-size: 24px;
+
+    animation:
+        floatDecor 5s ease-in-out infinite;
+}
+
+.decor-2 {
+
+    top: 20%;
+    right: 4%;
+
+    font-size: 27px;
+
+    opacity: .35;
+
+    animation:
+        floatDecor 7s ease-in-out infinite reverse;
+}
+
+.decor-3 {
+
+    bottom: 17%;
+    left: 5%;
+
+    font-size: 22px;
+
+    opacity: .35;
+
+    animation:
+        sparkleDecor 3s ease-in-out infinite;
+}
+
+.decor-4 {
+
+    bottom: 8%;
+    right: 5%;
+
+    font-size: 25px;
+
+    opacity: .35;
+
+    animation:
+        floatDecor 6s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   DECOR ANIMATION
+===================================================== */
+
+@keyframes floatDecor {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(8deg);
+    }
+}
+
+@keyframes sparkleDecor {
+
+    0%,
+    100% {
+        opacity: .25;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: .7;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =====================================================
+   COMMON
+===================================================== */
+
+.section-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--rose-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+}
+
+.section-label::before,
+.section-label::after {
+
+    content: "";
+
+    width: 25px;
+
+    height: 1px;
+
+    background:
+        rgba(168, 111, 112, .28);
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 48px;
+
+    padding: 13px 24px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.btn:hover {
+
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #b97879,
+            #c98988
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(185, 120, 121, .22);
+}
+
+.btn-primary:hover {
+
+    box-shadow:
+        0 17px 35px
+        rgba(185, 120, 121, .3);
+}
+
+.btn-secondary {
+
+    background:
+        rgba(255, 253, 251, .9);
+
+    border:
+        1px solid
+        rgba(185, 120, 121, .2);
+
+    color: var(--rose-dark);
+}
+
+
+/* =====================================================
+   01. LOADING
+===================================================== */
+
+#loadingScreen {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(249, 210, 205, .55),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(221, 235, 217, .45),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff9f7,
+            #fdf3f0
+        );
+}
+
+
+/* ---------- LOADING BOX ---------- */
+
+.loading-box {
+
+    position: relative;
+
+    width:
+        min(520px, calc(100% - 35px));
+
+    padding:
+        50px 35px 45px;
+
+    text-align: center;
+
+    border-radius: 35px;
+
+    background:
+        rgba(255, 253, 251, .82);
+
+    border:
+        1px solid
+        rgba(185, 120, 121, .12);
+
+    box-shadow:
+        0 30px 80px
+        rgba(168, 111, 112, .1);
+
+    backdrop-filter:
+        blur(18px);
+
+    animation:
+        loadingBoxAppear 1.2s ease both;
+}
+
+@keyframes loadingBoxAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ---------- LOADING ICON ---------- */
+
+.loading-icon {
+
+    width: 75px;
+    height: 75px;
+
+    margin:
+        0 auto 22px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f9ded9,
+            #fcece8
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(223, 163, 160, .18);
+
+    font-size: 32px;
+
+    animation:
+        iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+    }
+}
+
+.loading-small {
+
+    margin-bottom: 16px;
+
+    color: var(--rose-dark);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .25em;
+}
+
+.loading-title {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(42px, 8vw, 60px);
+
+    line-height: .98;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+.loading-subtitle {
+
+    margin-top: 18px;
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+}
+
+
+/* ---------- PROGRESS ---------- */
+
+.progress-container {
+
+    width: 100%;
+
+    height: 4px;
+
+    margin-top: 30px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        rgba(223, 163, 160, .14);
+}
+
+.progress-bar {
+
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e5aaa7,
+            #c98788
+        );
+
+    transition:
+        width .15s linear;
+}
+
+.loading-text {
+
+    margin-top: 12px;
+
+    color: var(--brown-light);
+
+    font-size: 11px;
+}
+
+.loading-status {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 25px;
+}
+
+.loading-status span {
+
+    color: var(--brown-light);
+
+    font-size: 10px;
+}
+
+.loading-status b {
+
+    color: var(--rose);
+}
+
+.loading-btn {
+
+    margin-top: 28px;
+
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.loading-btn:disabled {
+
+    opacity: .45;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ---------- LOADING DECOR ---------- */
+
+.loading-sticker {
+
+    position: absolute;
+
+    font-size: 40px;
+
+    opacity: .45;
+
+    animation:
+        floatDecor 5s ease-in-out infinite;
+}
+
+.sticker-left {
+
+    left: 9%;
+    top: 18%;
+}
+
+.sticker-right {
+
+    right: 9%;
+    bottom: 18%;
+}
+
+.loading-orbit {
+
+    position: absolute;
+
+    color: var(--rose);
+
+    opacity: .4;
+
+    animation:
+        orbitFloat 4s ease-in-out infinite;
+}
+
+.orbit-1 {
+
+    top: 23%;
+    right: 20%;
+}
+
+.orbit-2 {
+
+    bottom: 25%;
+    left: 19%;
+
+    animation-delay: 1s;
+}
+
+.orbit-3 {
+
+    top: 70%;
+    right: 14%;
+
+    animation-delay: 2s;
+}
+
+@keyframes orbitFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(20deg);
+    }
+}
+
+
+/* =====================================================
+   02. JOURNEY
+===================================================== */
+
+#journeyScreen {
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(249, 210, 205, .45),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(221, 235, 217, .38),
+            transparent 30%
+        ),
+
+        var(--cream);
+}
+
+#journeyScreen .story-header {
+
+    position: relative;
+
+    width:
+        min(850px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding:
+        100px 0 65px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+#journeyScreen .story-header h1 {
+
+    margin-top: 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(44px, 7vw, 72px);
+
+    line-height: .98;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+#journeyScreen .story-header p {
+
+    margin-top: 23px;
+
+    color: var(--brown-light);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* ---------- TIMELINE ---------- */
+
+#journeyScreen .journey {
+
+    position: relative;
+
+    width:
+        min(1050px, calc(100% - 35px));
+
+    margin: 0 auto;
+
+    padding-bottom: 30px;
+}
+
+#journeyScreen .journey-line {
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(223, 163, 160, .2) 7%,
+            rgba(223, 163, 160, .38) 50%,
+            rgba(223, 163, 160, .2) 93%,
+            transparent
+        );
+}
+
+#journeyScreen .journey-item {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 90px 1fr;
+
+    align-items: start;
+
+    min-height: 330px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- YEAR ---------- */
+
+#journeyScreen .journey-year {
+
+    position: absolute;
+
+    left: 50%;
+    top: 5px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 253, 251, .95);
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .35);
+
+    color: var(--rose-dark);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px
+        rgba(168, 111, 112, .1);
+
+    transition: .5s;
+}
+
+#journeyScreen
+.journey-item.visible
+.journey-year {
+
+    background:
+        linear-gradient(
+            135deg,
+            #d99594,
+            #c98283
+        );
+
+    color: white;
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+
+    box-shadow:
+        0 0 0 8px
+        rgba(223, 163, 160, .12),
+
+        0 12px 30px
+        rgba(168, 111, 112, .18);
+}
+
+
+/* ---------- CARD POSITION ---------- */
+
+#journeyScreen
+.journey-item.left
+.journey-note {
+
+    grid-column: 1;
+
+    grid-row: 1;
+
+    justify-self: end;
+}
+
+#journeyScreen
+.journey-item.right
+.journey-note {
+
+    grid-column: 3;
+
+    grid-row: 1;
+
+    justify-self: start;
+}
+
+
+/* ---------- CARD ---------- */
+
+#journeyScreen .journey-note {
+
+    position: relative;
+
+    width:
+        min(400px, 100%);
+
+    padding:
+        32px 34px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 253, 251, .88);
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .18);
+
+    box-shadow:
+        0 20px 55px
+        rgba(168, 111, 112, .08);
+
+    backdrop-filter:
+        blur(12px);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transform:
+        translateX(-60px)
+        translateY(25px)
+        scale(.97);
+
+    filter: blur(4px);
+
+    transition:
+        opacity .8s ease,
+        transform .9s cubic-bezier(.2,.75,.2,1),
+        filter .8s ease,
+        box-shadow .4s;
+}
+
+#journeyScreen
+.journey-item.right
+.journey-note {
+
+    transform:
+        translateX(60px)
+        translateY(25px)
+        scale(.97);
+}
+
+#journeyScreen
+.journey-item.visible
+.journey-note {
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateY(0)
+        scale(1);
+
+    filter: blur(0);
+}
+
+#journeyScreen
+.journey-note:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.01) !important;
+
+    box-shadow:
+        0 28px 65px
+        rgba(168, 111, 112, .13);
+}
+
+
+/* ---------- CARD DECOR ---------- */
+
+#journeyScreen
+.journey-note::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(246, 216, 214, .45);
+
+    filter: blur(20px);
+}
+
+#journeyScreen
+.journey-note::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 28px;
+
+    width: 3px;
+    height: 55px;
+
+    border-radius:
+        0 5px 5px 0;
+
+    background:
+        var(--rose);
+
+    opacity: .65;
+}
+
+#journeyScreen .mini-sticker {
+
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fde7e4,
+            #f9dedb
+        );
+
+    font-size: 19px;
+
+    transform:
+        rotate(7deg);
+
+    transition: .4s;
+}
+
+#journeyScreen
+.journey-note:hover
+.mini-sticker {
+
+    transform:
+        rotate(-7deg)
+        scale(1.1);
+}
+
+#journeyScreen .note-label {
+
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: var(--brown-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+#journeyScreen .journey-note h2 {
+
+    margin-bottom: 15px;
+
+    padding-right: 40px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(30px, 4vw, 39px);
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+#journeyScreen .journey-note p {
+
+    color: #806d67;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* ---------- CARD COLORS ---------- */
+
+#journeyScreen
+.journey-note.pink {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 231, 228, .88),
+            rgba(255, 253, 251, .9)
+        );
+}
+
+#journeyScreen
+.journey-note.yellow {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(248, 239, 218, .85),
+            rgba(255, 253, 251, .9)
+        );
+}
+
+#journeyScreen
+.journey-note.purple {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239, 227, 238, .85),
+            rgba(255, 253, 251, .9)
+        );
+}
+
+
+/* ---------- JOURNEY DECOR ---------- */
+
+.journey-decor {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    opacity: .35;
+}
+
+.flower-a {
+
+    top: 17%;
+    left: 5%;
+
+    font-size: 32px;
+
+    animation:
+        floatDecor 6s ease-in-out infinite;
+}
+
+.star-a {
+
+    top: 40%;
+    right: 7%;
+
+    color: var(--rose);
+
+    font-size: 25px;
+
+    animation:
+        sparkleDecor 4s ease-in-out infinite;
+}
+
+.cap-a {
+
+    bottom: 10%;
+    left: 7%;
+
+    font-size: 30px;
+
+    transform:
+        rotate(-12deg);
+
+    animation:
+        floatDecor 7s ease-in-out infinite;
+}
+
+
+/* ---------- CONTINUE ---------- */
+
+.journey-next-btn {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin:
+        5px auto 70px;
+
+    padding:
+        13px 22px;
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .28);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 253, 251, .88);
+
+    color: var(--rose-dark);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(168, 111, 112, .08);
+
+    backdrop-filter:
+        blur(10px);
+
+    animation:
+        journeyButtonFloat 2.5s ease-in-out infinite;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.journey-next-btn:hover {
+
+    animation: none;
+
+    transform:
+        translateY(-4px);
+
+    background:
+        var(--white-soft);
+
+    box-shadow:
+        0 14px 35px
+        rgba(168, 111, 112, .12);
+}
+
+.journey-next-arrow {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(223, 163, 160, .15);
+
+    font-size: 15px;
+
+    animation:
+        journeyArrow 1.5s ease-in-out infinite;
+}
+
+@keyframes journeyButtonFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(5px);
+    }
+}
+
+@keyframes journeyArrow {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(4px);
+    }
+}
+
+
+/* =====================================================
+   03. ENVELOPE
+===================================================== */
+
+#envelopeScreen {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 25%,
+            rgba(250, 211, 207, .58),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(222, 236, 218, .42),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffaf8,
+            #fdf1ee
+        );
+
+    text-align: center;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.envelope-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 35px;
+
+    animation:
+        envelopeTitleAppear 1s ease both;
+}
+
+@keyframes envelopeTitleAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.envelope-title h1 {
+
+    margin-top: 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 8vw, 70px);
+
+    line-height: .95;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+.envelope-title p {
+
+    margin-top: 18px;
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   ENVELOPE
+===================================================== */
+
+.envelope-wrapper {
+
+    position: relative;
+
+    width: 330px;
+    height: 230px;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    animation:
+        envelopeFloat 3.5s ease-in-out infinite;
+
+    transition:
+        opacity .5s ease,
+        transform .6s ease;
+}
+
+@keyframes envelopeFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(1deg);
+    }
+}
+
+.envelope {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transform-style:
+        preserve-3d;
+
+    filter:
+        drop-shadow(
+            0 25px 30px
+            rgba(168, 111, 112, .17)
+        );
+}
+
+
+/* =====================================================
+   ENVELOPE BACK
+===================================================== */
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2cbc5,
+            #eabbb5
+        );
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.envelope-letter {
+
+    position: absolute;
+
+    left: 10%;
+
+    bottom: 8%;
+
+    width: 80%;
+
+    height: 86%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffefd,
+            #fff8f5
+        );
+
+    color: var(--brown);
+
+    box-shadow:
+        0 5px 18px
+        rgba(168, 111, 112, .08);
+
+    z-index: 2;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+.envelope-letter::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    top: 10px;
+    left: 14px;
+
+    color:
+        rgba(223, 163, 160, .45);
+
+    font-size: 17px;
+}
+
+.envelope-letter::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    bottom: 10px;
+    right: 15px;
+
+    color:
+        rgba(223, 163, 160, .45);
+
+    font-size: 12px;
+}
+
+.envelope-letter span {
+
+    font-size: 25px;
+}
+
+.envelope-letter strong {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 23px;
+
+    color: var(--rose-dark);
+}
+
+.envelope-letter small {
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    color: var(--brown-light);
+}
+
+
+/* =====================================================
+   ENVELOPE BODY
+===================================================== */
+
+.envelope-body {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8b8b0 0%,
+            #f0c9c1 50%,
+            #e3b0a9 100%
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 3;
+}
+
+
+/* =====================================================
+   FLAP
+===================================================== */
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 58%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f2cec7,
+            #e7b8b0
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:
+        top center;
+
+    z-index: 5;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
+   SEAL
+===================================================== */
+
+.envelope-seal {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -20%);
+
+    z-index: 6;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d99391,
+            #b97879
+        );
+
+    color:
+        var(--white-soft);
+
+    font-size: 18px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(168, 111, 112, .2),
+
+        0 0 0 5px
+        rgba(255, 255, 255, .55);
+
+    transition:
+        opacity .4s ease,
+        transform .5s ease;
+}
+
+
+/* =====================================================
+   OPEN ENVELOPE
+===================================================== */
+
+.envelope-wrapper.open {
+
+    animation: none;
+}
+
+.envelope-wrapper.open
+.envelope-flap {
+
+    transform:
+        rotateX(180deg);
+}
+
+.envelope-wrapper.open
+.envelope-letter {
+
+    transform:
+        translateY(-85px);
+
+    z-index: 6;
+
+    transition-delay:
+        .45s;
+}
+
+.envelope-wrapper.open
+.envelope-seal {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -20%)
+        scale(.5);
+}
+
+
+/* Khi mở xong → phong bì biến mất */
+
+.envelope-wrapper.hide {
+
+    opacity: 0;
+
+    transform:
+        translateY(-150px)
+        scale(.88);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   OPEN LABEL
+===================================================== */
+
+.open-label {
+
+    margin-top: 30px;
+
+    padding:
+        12px 20px;
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, .45);
+
+    color: var(--rose-dark);
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+
+    cursor: pointer;
+
+    animation:
+        openLabelPulse 2s ease-in-out infinite;
+
+    transition:
+        background .3s ease,
+        transform .3s ease;
+}
+
+.open-label:hover {
+
+    background:
+        rgba(255, 255, 255, .8);
+
+    transform:
+        translateY(-2px);
+}
+
+@keyframes openLabelPulse {
+
+    0%,
+    100% {
+        opacity: .55;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   ENVELOPE DECOR
+===================================================== */
+
+.envelope-bg-star {
+
+    position: absolute;
+
+    color: var(--rose);
+
+    opacity: .4;
+
+    animation:
+        floatDecor 5s ease-in-out infinite;
+}
+
+.e1 {
+
+    top: 20%;
+    left: 18%;
+}
+
+.e2 {
+
+    top: 30%;
+    right: 18%;
+
+    animation-delay:
+        1s;
+}
+
+.e3 {
+
+    bottom: 20%;
+    left: 23%;
+
+    animation-delay:
+        2s;
+}
+
+
+/* =====================================================
+   04. INVITATION
+===================================================== */
+
+#invitationScreen {
+
+    padding:
+        50px 20px;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(249, 210, 205, .48),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(221, 235, 217, .4),
+            transparent 30%
+        ),
+
+        var(--cream);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   INVITATION CARD
+===================================================== */
+
+.invitation-card {
+
+    position: relative;
+
+    width:
+        min(700px, 100%);
+
+    margin: 0 auto;
+
+    padding:
+        65px 55px 45px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 253, 251, .92);
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .18);
+
+    box-shadow:
+        0 30px 90px
+        rgba(168, 111, 112, .12);
+
+    overflow: hidden;
+
+    animation:
+        cardAppear 1.2s
+        cubic-bezier(.2,.75,.2,1)
+        both;
+}
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ---------- CARD DECOR ---------- */
+
+.card-corner {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: .5;
+
+    animation:
+        floatDecor 5s ease-in-out infinite;
+}
+
+.corner-1 {
+
+    top: 20px;
+    left: 20px;
+}
+
+.corner-2 {
+
+    top: 20px;
+    right: 20px;
+
+    animation-delay: 1s;
+}
+
+.corner-3 {
+
+    bottom: 20px;
+    left: 20px;
+
+    animation-delay: 1.5s;
+}
+
+.corner-4 {
+
+    bottom: 20px;
+    right: 20px;
+
+    animation-delay: 2s;
+}
+
+
+/* ---------- CARD TOP ---------- */
+
+.card-top > span {
+
+    color: var(--rose-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+.tiny-line {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin:
+        16px 0 12px;
+
+    color: var(--rose);
+}
+
+.tiny-line i {
+
+    display: block;
+
+    width: 35px;
+
+    height: 1px;
+
+    background:
+        rgba(168, 111, 112, .25);
+}
+
+.card-top p {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+}
+
+.card-top h1 {
+
+    margin-top: 7px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(46px, 8vw, 70px);
+
+    line-height: .9;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+
+/* ---------- GRADUATE ---------- */
+
+.graduate {
+
+    margin-top: 38px;
+
+    padding: 24px;
+
+    border-top:
+        1px solid
+        rgba(223, 163, 160, .16);
+
+    border-bottom:
+        1px solid
+        rgba(223, 163, 160, .16);
+}
+
+.graduate > span {
+
+    color: var(--brown-light);
+
+    font-size: 9px;
+
+    letter-spacing: .2em;
+
+    font-weight: 700;
+}
+
+.graduate h2 {
+
+    margin-top: 8px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    color: var(--rose-dark);
+}
+
+.graduate p {
+
+    margin-top: 8px;
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+}
+
+
+/* ---------- GUEST ---------- */
+
+.guest-box {
+
+    margin-top: 30px;
+
+    padding:
+        28px 20px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 225, 222, .65),
+            rgba(229, 237, 225, .55)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .5);
+}
+
+.guest-icon {
+
+    font-size: 25px;
+}
+
+.guest-label {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--rose-dark);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+.guest-box h2 {
+
+    margin-top: 10px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 27px;
+
+    line-height: 1.05;
+
+    color: var(--brown);
+}
+
+.guest-box p {
+
+    margin-top: 12px;
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* ---------- EVENT ---------- */
+
+.event-info {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.event-item {
+
+    padding:
+        20px 10px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff0ed,
+            #f9eee9
+        );
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .1);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.event-item:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(168, 111, 112, .1);
+}
+
+.event-icon {
+
+    margin-bottom: 8px;
+
+    font-size: 21px;
+}
+
+.event-item span {
+
+    display: block;
+
+    color: var(--brown-light);
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+
+    font-weight: 700;
+}
+
+.event-item strong {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--brown);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    line-height: 1.1;
+}
+
+.event-item small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--brown-light);
+
+    font-size: 9px;
+}
+
+
+/* ---------- MESSAGE ---------- */
+
+.message-box {
+
+    position: relative;
+
+    margin-top: 30px;
+
+    padding:
+        25px 30px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(249, 210, 205, .22);
+
+    border:
+        1px solid
+        rgba(223, 163, 160, .1);
+}
+
+.message-box p {
+
+    color: #806d67;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.message-box p + p {
+
+    margin-top: 10px;
+}
+
+.quote-mark {
+
+    position: absolute;
+
+    top: 5px;
+    left: 12px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 45px;
+
+    color: var(--rose);
+
+    opacity: .5;
+}
+
+.quote-mark.end {
+
+    top: auto;
+    left: auto;
+
+    right: 12px;
+    bottom: -15px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button-group {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+/* ---------- THANK YOU ---------- */
+
+.thank-you {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fce5e2,
+            #e7efe3
+        );
+
+    animation:
+        thankYouAppear .7s ease both;
+}
+
+.thank-you.show {
+
+    display: block;
+}
+
+@keyframes thankYouAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.thank-you > div {
+
+    font-size: 25px;
+}
+
+.thank-you h3 {
+
+    margin-top: 6px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 28px;
+
+    color: var(--rose-dark);
+}
+
+.thank-you p {
+
+    margin-top: 5px;
+
+    color: var(--brown-light);
+
+    font-size: 11px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.card-footer {
+
+    margin-top: 38px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(223, 163, 160, .16);
+}
+
+.card-footer span {
+
+    color: var(--brown-light);
+
+    font-size: 8px;
+
+    letter-spacing: .25em;
+}
+
+.card-footer div {
+
+    margin: 10px 0;
+
+    color: var(--rose);
+}
+
+.card-footer strong {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    color: var(--brown);
+}
+
+
+/* =====================================================
+   MAIN DECOR
+===================================================== */
+
+.main-bg-decoration {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    opacity: .3;
+
+    animation:
+        floatDecor 6s ease-in-out infinite;
+}
+
+.main-d1 {
+
+    top: 12%;
+    left: 5%;
+
+    font-size: 35px;
+}
+
+.main-d2 {
+
+    top: 55%;
+    right: 4%;
+
+    font-size: 32px;
+
+    animation-delay: 1s;
+}
+
+.main-d3 {
+
+    bottom: 10%;
+    left: 7%;
+
+    font-size: 25px;
+
+    animation-delay: 2s;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+    #journeyScreen .journey-item {
+
+        grid-template-columns:
+            70px 1fr;
+    }
+
+    #journeyScreen .journey-line {
+
+        left: 35px;
+    }
+
+    #journeyScreen .journey-year {
+
+        left: 35px;
+    }
+
+    #journeyScreen
+    .journey-item.left
+    .journey-note,
+
+    #journeyScreen
+    .journey-item.right
+    .journey-note {
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        justify-self: start;
+
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* GLOBAL */
+
+    .global-decor {
+        display: none;
+    }
+
+
+    /* LOADING */
+
+    .loading-box {
+
+        padding:
+            40px 22px 35px;
+
+        border-radius: 28px;
+    }
+
+    .loading-title {
+
+        font-size: 43px;
+    }
+
+    .loading-status {
+
+        gap:
+            8px 12px;
+    }
+
+    .loading-sticker {
+
+        font-size: 27px;
+    }
+
+
+    /* JOURNEY */
+
+    #journeyScreen
+    .story-header {
+
+        width:
+            calc(100% - 30px);
+
+        padding:
+            80px 0 50px;
+    }
+
+    #journeyScreen
+    .story-header h1 {
+
+        font-size: 43px;
+    }
+
+    #journeyScreen
+    .story-header p {
+
+        font-size: 13px;
+    }
+
+    #journeyScreen .journey {
+
+        width:
+            calc(100% - 24px);
+    }
+
+    #journeyScreen .journey-line {
+
+        left: 24px;
+    }
+
+    #journeyScreen .journey-item {
+
+        display: block;
+
+        min-height: auto;
+
+        margin-bottom: 42px;
+
+        padding-left: 52px;
+    }
+
+    #journeyScreen .journey-year {
+
+        left: 24px;
+
+        top: 20px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 18px;
+    }
+
+    #journeyScreen
+    .journey-item.left
+    .journey-note,
+
+    #journeyScreen
+    .journey-item.right
+    .journey-note {
+
+        width: 100%;
+
+        padding:
+            27px 22px;
+    }
+
+    #journeyScreen
+    .journey-item.left
+    .journey-note {
+
+        transform:
+            translateX(-30px)
+            translateY(20px)
+            scale(.97);
+    }
+
+    #journeyScreen
+    .journey-item.right
+    .journey-note {
+
+        transform:
+            translateX(30px)
+            translateY(20px)
+            scale(.97);
+    }
+
+    #journeyScreen
+    .journey-item.visible
+    .journey-note {
+
+        transform:
+            translateX(0)
+            translateY(0)
+            scale(1);
+    }
+
+    #journeyScreen
+    .journey-note h2 {
+
+        font-size: 29px;
+    }
+
+    #journeyScreen
+    .journey-note p {
+
+        font-size: 13px;
+
+        line-height: 1.8;
+    }
+
+    #journeyScreen
+    .mini-sticker {
+
+        width: 34px;
+        height: 34px;
+
+        right: 16px;
+
+        font-size: 16px;
+    }
+
+    .journey-next-btn {
+
+        margin-bottom: 50px;
+    }
+
+
+    /* ENVELOPE */
+
+    .envelope-title {
+
+        margin-bottom: 25px;
+    }
+
+    .envelope-title h1 {
+
+        font-size: 48px;
+    }
+
+    .envelope-title p {
+
+        font-size: 12px;
+    }
+
+    .envelope-wrapper {
+
+        width: 285px;
+        height: 195px;
+    }
+
+    .envelope-letter strong {
+
+        font-size: 20px;
+    }
+
+    .envelope-seal {
+
+        width: 43px;
+        height: 43px;
+    }
+
+
+    /* INVITATION */
+
+    #invitationScreen {
+
+        padding:
+            25px 12px;
+    }
+
+    .invitation-card {
+
+        padding:
+            50px 20px 35px;
+
+        border-radius: 24px;
+    }
+
+    .card-top h1 {
+
+        font-size: 50px;
+    }
+
+    .graduate {
+
+        padding:
+            20px 10px;
+    }
+
+    .graduate h2 {
+
+        font-size: 35px;
+    }
+
+    .guest-box {
+
+        padding:
+            25px 15px;
+    }
+
+    .guest-box h2 {
+
+        font-size: 24px;
+    }
+
+    .event-info {
+
+        grid-template-columns: 1fr;
+    }
+
+    .event-item {
+
+        padding: 16px;
+    }
+
+    .message-box {
+
+        padding:
+            23px 22px;
+    }
+
+    .button-group {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .button-group .btn {
+
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+}
