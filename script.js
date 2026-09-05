@@ -412,6 +412,16 @@ function showThankYou() {
       thankYouMessage.textContent =
         "Hẹn gặp Tiến tại ngày đặc biệt này nha!";
 
+    } else if (type === "family") {
+
+      thankYouMessage.textContent =
+        "Con hẹn gặp cả nhà mình tại ngày đặc biệt này nha!";
+
+    } else if (type === "littleAunt") {
+
+      thankYouMessage.textContent =
+        "Con hẹn gặp Út Mi tại ngày đặc biệt này nha!";
+
     }
   }
 
@@ -566,6 +576,42 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Tiến ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
     message2:
       "Tiến đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này một chút. Có Tiến ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
+
+  // Gia đình
+  family: {
+    invitation:
+      "Dạ, con xin mời cả nhà đến tham dự lễ tốt nghiệp của con nha. Con mong hôm đó cả nhà mình sẽ có mặt đông đủ để cùng con vui một ngày thật đặc biệt.",
+
+    thankYouTitle:
+      "Hẹn gặp cả nhà nha!",
+
+    thankYou:
+      "Con cảm ơn cả nhà đã đến chung vui và cùng con lưu lại một ngày thật đáng nhớ nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học của con cũng sắp kết thúc rồi. Nghĩ lại cũng nhanh thật, từ ngày bắt đầu đi học đến lúc chuẩn bị tốt nghiệp đã là một chặng đường khá dài. Con muốn ngày hôm đó có cả nhà ở bên để cùng con ăn mừng, chụp vài tấm hình và lưu lại những kỷ niệm thật đẹp ạ.",
+
+    message2:
+      "Cả nhà đến với con nha. Gia đình mình cùng gặp nhau, nói chuyện, chụp hình rồi cùng con tận hưởng ngày tốt nghiệp một chút. Với con, có cả nhà cùng đến chắc chắn ngày hôm đó sẽ vui và ý nghĩa hơn rất nhiều."
+  },
+
+  // Cô út
+  littleAunt: {
+    invitation:
+      "Dạ, con xin mời Út Mi đến tham dự lễ tốt nghiệp của con nha. Con mong hôm đó Út Mi sẽ đến chung vui và cùng con lưu lại một ngày thật đặc biệt.",
+
+    thankYouTitle:
+      "Hẹn gặp Út Mi nha!",
+
+    thankYou:
+      "Con cảm ơn Út Mi đã đến chung vui và dành thời gian cùng con trong ngày đặc biệt này nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học của con cũng đã tới lúc kết thúc rồi. Nghĩ lại cũng nhanh thật, từ ngày bắt đầu đi học đến lúc chuẩn bị tốt nghiệp đã là một chặng đường khá dài. Con muốn ngày hôm đó có những người thân của mình ở bên, và con cũng rất mong Út Mi sẽ có mặt để cùng con ăn mừng, chụp vài tấm hình và lưu lại một kỷ niệm thật đẹp ạ.",
+
+    message2:
+      "Nếu Út Mi lên được, út đến với con nha. Hai cô cháu mình cùng gặp nhau, nói chuyện, chụp hình rồi cùng nhau tận hưởng ngày tốt nghiệp một chút. Có Út Mi đến chung vui chắc ngày hôm đó của con sẽ vui hơn nhiều lắm."
   }
 
 };
