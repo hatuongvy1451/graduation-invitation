@@ -18,6 +18,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<!-- THANK YOU POPUP -->
+<div id="thankYouPopup" class="thankyou-overlay">
+
+    <div class="thankyou-popup">
+
+        <button class="thankyou-close" onclick="closeThankYou()">
+            ×
+        </button>
+
+        <div class="thankyou-icon">
+            💗
+        </div>
+
+        <div class="thankyou-sparkles">
+            ✦　♡　✦
+        </div>
+
+        <span class="thankyou-label">
+            THANK YOU
+        </span>
+
+        <h2 id="thankYouTitle">
+            Hẹn gặp bạn nhé!
+        </h2>
+
+        <p id="thankYouText">
+            Cảm ơn bạn đã dành thời gian<br>
+            và nhận lời tham dự lễ tốt nghiệp của mình.
+        </p>
+
+        <div class="thankyou-message">
+            🎓 <span id="thankYouMessage">Hẹn gặp bạn tại ngày đặc biệt này!</span>
+        </div>
+
+        <button class="thankyou-ok" onclick="closeThankYou()">
+            Iu quá, hẹn gặp nhé 💕
+        </button>
+
+    </div>
+
+</div>
+
 <body>
 
     <!-- =====================================================
@@ -66,22 +108,27 @@
                 <div id="progressBar" class="progress-bar"></div>
             </div>
 
+            <p id="progressPercent" class="progress-percent">0%</p>
+
             <p id="loadingText" class="loading-text">
                 Đang chuẩn bị một điều đặc biệt...
             </p>
 
             <div class="loading-status">
 
-                <span>
-                    <b>✓</b> Hành trình đại học
+                <span class="status-item">
+                    <b>✓</b>
+                    <span>Hành trình</span>
                 </span>
 
-                <span>
-                    <b>✓</b> Những kỷ niệm
+                <span class="status-item">
+                    <b>✓</b>
+                    <span>Kỷ niệm</span>
                 </span>
 
-                <span>
-                    <b>✓</b> Lời mời đặc biệt
+                <span class="status-item">
+                    <b>✓</b>
+                    <span>Lời mời</span>
                 </span>
 
             </div>
@@ -113,7 +160,7 @@
 
             <h1>
                 4,5 năm<br>
-                không chỉ có bài học.
+                không chỉ là những bài học.
             </h1>
 
             <p>
@@ -289,10 +336,17 @@
         </div>
 
 
-        <button class="journey-next-btn" onclick="openEnvelopeScreen()">
-            <span>Tiếp tục</span>
-            <span class="journey-next-arrow">↓</span>
-        </button>
+        <div class="screen-navigation">
+
+            <button class="nav-btn nav-back" onclick="showScreen('loadingScreen')">
+                ← Quay lại
+            </button>
+
+            <button class="nav-btn nav-next" onclick="openEnvelopeScreen()">
+                Tiếp tục →
+            </button>
+
+        </div>
 
     </section>
 
@@ -328,12 +382,19 @@
 
         <div class="envelope-wrapper" onclick="openInvitation()">
 
+            <!-- Trái tim lấp lánh -->
+            <span class="sparkle-heart heart-1">♥</span>
+            <span class="sparkle-heart heart-2">♥</span>
+            <span class="sparkle-heart heart-3">♥</span>
+            <span class="sparkle-heart heart-4">♥</span>
+            <span class="sparkle-heart heart-5">♥</span>
+            <span class="sparkle-heart heart-6">♥</span>
+
             <div class="envelope">
 
                 <div class="envelope-back"></div>
 
                 <div class="envelope-letter">
-
                     <span>🎓</span>
 
                     <strong>
@@ -343,7 +404,6 @@
                     <small>
                         HÀ TƯỜNG VY
                     </small>
-
                 </div>
 
                 <div class="envelope-body"></div>
@@ -355,13 +415,20 @@
                 </div>
 
             </div>
-
         </div>
 
 
         <button class="open-label" onclick="openInvitation()">
             ✨ Chạm vào phong bì để mở ✨
         </button>
+
+        <div class="screen-navigation">
+
+            <button class="nav-btn nav-back" onclick="showScreen('journeyScreen')">
+                ← Quay lại
+            </button>
+
+        </div>
 
     </section>
 
@@ -464,9 +531,8 @@
                     <span id="guestName">Bạn thân mến</span>
                 </h2>
 
-                <p>
-                    đến chung vui và chứng kiến<br>
-                    khoảnh khắc tốt nghiệp của mình nha.
+                <p id="guestMessage">
+                    Mình mời bạn đến chung vui cùng mình trong ngày tốt nghiệp nhé.
                 </p>
 
             </div>
@@ -541,13 +607,13 @@
                     “
                 </span>
 
-                <p>
-                    Có thể đây chỉ là một buổi lễ tốt nghiệp, 
+                <p id="message1">
+                    Có thể đây chỉ là một buổi lễ tốt nghiệp,
                     nhưng với mình, đó là khoảnh khắc đánh dấu một hành trình dài đã đi qua.
                 </p>
 
-                <p>
-                    Mình rất mong được gặp bạn tại buổi lễ, 
+                <p id="message2">
+                    Mình rất mong được gặp bạn tại buổi lễ,
                     để cùng nhau chia sẻ niềm vui và kỷ niệm đáng nhớ này.
                     Mình sẽ chờ bạn đến chung vui và chứng kiến khoảnh khắc đặc biệt này nhé!
                 </p>
@@ -584,13 +650,12 @@
                     🎉
                 </div>
 
-                <h3>
+                <h3 id="thankYouTitle">
                     Yeah yeah! Hẹn gặp bạn nhé!
                 </h3>
 
-                <p>
-                    Cảm ơn bạn vì đã dành thời gian
-                    đến chung vui cùng mình.
+                <p id="thankYouText">
+                    Cảm ơn bạn vì đã đến chung vui cùng mình.
                 </p>
 
             </div>
@@ -613,6 +678,14 @@
                 </strong>
 
             </div>
+
+        </div>
+
+        <div class="screen-navigation invitation-navigation">
+
+            <button class="nav-btn nav-back" onclick="showScreen('envelopeScreen')">
+                ← Quay lại
+            </button>
 
         </div>
 

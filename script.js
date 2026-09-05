@@ -2,118 +2,171 @@
    SCREEN CONTROL
 ===================================================== */
 
-let currentScreen = "loadingScreen";
+let currentScreen =
+  sessionStorage.getItem("currentScreen") || "loadingScreen";
 
 
 function showScreen(screenId) {
 
-    const current =
-        document.getElementById(currentScreen);
+  const current =
+    document.getElementById(currentScreen);
 
-    const next =
-        document.getElementById(screenId);
+  const next =
+    document.getElementById(screenId);
 
-    if (!next) return;
+  if (!next) return;
 
-    if (current) {
-        current.classList.remove("active");
-    }
+  if (current) {
+    current.classList.remove("active");
+  }
 
-    setTimeout(() => {
+  setTimeout(() => {
 
-        next.classList.add("active");
+    next.classList.add("active");
 
-        next.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
+    next.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
 
-    }, 100);
+  }, 100);
 
-    currentScreen = screenId;
+  currentScreen = screenId;
+
+  // Lưu màn hình hiện tại
+  sessionStorage.setItem(
+    "currentScreen",
+    screenId
+  );
 }
 
+
+/* =====================================================
+   KHÔI PHỤC MÀN HÌNH KHI QUAY LẠI
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const savedScreen =
+    sessionStorage.getItem("currentScreen");
+
+  if (savedScreen) {
+
+    const screen =
+      document.getElementById(savedScreen);
+
+    if (screen) {
+
+      // Tắt tất cả màn hình
+      document
+        .querySelectorAll(".page")
+        .forEach(page => {
+          page.classList.remove("active");
+        });
+
+      // Mở lại màn hình trước đó
+      screen.classList.add("active");
+
+      currentScreen = savedScreen;
+
+      screen.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+    }
+  }
+
+  renderGuestName();
+});
 
 /* =====================================================
    LOADING
 ===================================================== */
 
 const progressBar =
-    document.getElementById("progressBar");
+  document.getElementById("progressBar");
+
+const progressPercent =
+  document.getElementById("progressPercent");
 
 const loadingText =
-    document.getElementById("loadingText");
+  document.getElementById("loadingText");
 
 const startBtn =
-    document.getElementById("startBtn");
+  document.getElementById("startBtn");
 
 
 let progress = 0;
 
 const loadingMessages = [
 
-    "Đang chuẩn bị một điều đặc biệt...",
+  "Đang chuẩn bị một điều đặc biệt...",
 
-    "Đang gom lại những năm tháng ấy...",
+  "Đang gom lại những năm tháng ấy...",
 
-    "Một chút kỷ niệm...",
+  "Một chút kỷ niệm...",
 
-    "Một chút cảm xúc...",
+  "Một chút cảm xúc...",
 
-    "Và một lời mời dành cho bạn..."
+  "Và một lời mời đặc biệt dành cho bạn..."
 ];
 
 
 const loadingInterval =
-    setInterval(() => {
+  setInterval(() => {
 
-        progress += 2;
+    progress += 2;
 
-        if (progressBar) {
+    if (progressPercent) {
+      progressPercent.textContent =
+        `${Math.min(progress, 100)}%`;
+    }
 
-            progressBar.style.width =
-                `${progress}%`;
-        }
+    if (progressBar) {
 
-
-        if (loadingText) {
-
-            const index =
-                Math.min(
-                    Math.floor(progress / 20),
-                    loadingMessages.length - 1
-                );
-
-            loadingText.textContent =
-                loadingMessages[index];
-        }
+      progressBar.style.width =
+        `${progress}%`;
+    }
 
 
-        if (progress >= 100) {
+    if (loadingText) {
 
-            clearInterval(loadingInterval);
+      const index =
+        Math.min(
+          Math.floor(progress / 20),
+          loadingMessages.length - 1
+        );
 
-            if (startBtn) {
+      loadingText.textContent =
+        loadingMessages[index];
+    }
 
-                startBtn.disabled = false;
-            }
 
-            if (loadingText) {
+    if (progress >= 100) {
 
-                loadingText.textContent =
-                    "Mọi thứ đã sẵn sàng ✨";
-            }
+      clearInterval(loadingInterval);
 
-        }
+      if (startBtn) {
 
-    }, 45);
+        startBtn.disabled = false;
+      }
+
+      if (loadingText) {
+
+        loadingText.textContent =
+          "Mọi thứ đã sẵn sàng ✨";
+      }
+
+    }
+
+  }, 45);
 
 
 /* Ban đầu khóa nút */
 
 if (startBtn) {
 
-    startBtn.disabled = true;
+  startBtn.disabled = true;
 }
 
 
@@ -123,17 +176,17 @@ if (startBtn) {
 
 function startInvitation() {
 
-    if (startBtn && startBtn.disabled) {
-        return;
-    }
+  if (startBtn && startBtn.disabled) {
+    return;
+  }
 
-    showScreen("journeyScreen");
+  showScreen("journeyScreen");
 
-    setTimeout(() => {
+  setTimeout(() => {
 
-        revealFirstJourneyItem();
+    revealFirstJourneyItem();
 
-    }, 600);
+  }, 600);
 }
 
 
@@ -142,12 +195,12 @@ function startInvitation() {
 ===================================================== */
 
 const journeyScreen =
-    document.getElementById("journeyScreen");
+  document.getElementById("journeyScreen");
 
 const journeyItems =
-    document.querySelectorAll(
-        "#journeyScreen .journey-item"
-    );
+  document.querySelectorAll(
+    "#journeyScreen .journey-item"
+  );
 
 
 /*
@@ -157,9 +210,9 @@ const journeyItems =
 
 function revealJourneyItem(item) {
 
-    if (!item) return;
+  if (!item) return;
 
-    item.classList.add("visible");
+  item.classList.add("visible");
 }
 
 
@@ -169,13 +222,13 @@ function revealJourneyItem(item) {
 
 function revealFirstJourneyItem() {
 
-    if (!journeyItems.length) {
-        return;
-    }
+  if (!journeyItems.length) {
+    return;
+  }
 
-    revealJourneyItem(
-        journeyItems[0]
-    );
+  revealJourneyItem(
+    journeyItems[0]
+  );
 }
 
 
@@ -185,40 +238,40 @@ function revealFirstJourneyItem() {
 
 if (journeyScreen && journeyItems.length) {
 
-    const journeyObserver =
-        new IntersectionObserver(
+  const journeyObserver =
+    new IntersectionObserver(
 
-            (entries) => {
+      (entries) => {
 
-                entries.forEach(entry => {
+        entries.forEach(entry => {
 
-                    if (
-                        entry.isIntersecting &&
-                        entry.intersectionRatio >= .25
-                    ) {
+          if (
+            entry.isIntersecting &&
+            entry.intersectionRatio >= .25
+          ) {
 
-                        revealJourneyItem(
-                            entry.target
-                        );
+            revealJourneyItem(
+              entry.target
+            );
 
-                    }
+          }
 
-                });
+        });
 
-            },
+      },
 
-            {
-                root: journeyScreen,
-                threshold: .25
-            }
-        );
+      {
+        root: journeyScreen,
+        threshold: .25
+      }
+    );
 
 
-    journeyItems.forEach(item => {
+  journeyItems.forEach(item => {
 
-        journeyObserver.observe(item);
+    journeyObserver.observe(item);
 
-    });
+  });
 
 }
 
@@ -229,7 +282,7 @@ if (journeyScreen && journeyItems.length) {
 
 function openEnvelopeScreen() {
 
-    showScreen("envelopeScreen");
+  showScreen("envelopeScreen");
 
 }
 
@@ -239,42 +292,42 @@ function openEnvelopeScreen() {
 ===================================================== */
 
 const envelopeWrapper =
-    document.querySelector(
-        ".envelope-wrapper"
-    );
+  document.querySelector(
+    ".envelope-wrapper"
+  );
 
 
 function openInvitation() {
 
-    if (!envelopeWrapper) {
-        return;
-    }
+  if (!envelopeWrapper) {
+    return;
+  }
 
 
-    /*
-     * Nếu đã mở rồi thì không mở lại
-     */
+  /*
+   * Nếu đã mở rồi thì không mở lại
+   */
 
-    if (
-        envelopeWrapper.classList.contains("open")
-    ) {
-        return;
-    }
-
-
-    envelopeWrapper.classList.add("open");
+  if (
+    envelopeWrapper.classList.contains("open")
+  ) {
+    return;
+  }
 
 
-    /*
-     * Cho người dùng nhìn animation
-     * phong bì mở trước khi chuyển
-     */
+  envelopeWrapper.classList.add("open");
 
-    setTimeout(() => {
 
-        showScreen("invitationScreen");
+  /*
+   * Cho người dùng nhìn animation
+   * phong bì mở trước khi chuyển
+   */
 
-    }, 1500);
+  setTimeout(() => {
+
+    showScreen("invitationScreen");
+
+  }, 1500);
 
 }
 
@@ -285,31 +338,124 @@ function openInvitation() {
 
 function showThankYou() {
 
-    const thankYou =
-        document.getElementById("thankYou");
+  const popup =
+    document.getElementById("thankYouPopup");
 
-    if (!thankYou) {
-        return;
+  if (!popup) return;
+
+  const {
+    guest,
+    type
+  } = getGuestInfo();
+
+  const guestType =
+    guestTypes[type] || guestTypes.ten;
+
+
+  /* ===============================
+     TIÊU ĐỀ
+  =============================== */
+
+  const thankYouTitle =
+    document.getElementById("thankYouTitle");
+
+  if (thankYouTitle) {
+
+    thankYouTitle.textContent =
+      guestType.thankYouTitle.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+
+  /* ===============================
+     LỜI CẢM ƠN
+  =============================== */
+
+  const thankYouText =
+    document.getElementById("thankYouText");
+
+  if (thankYouText) {
+
+    thankYouText.textContent =
+      guestType.thankYou.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+
+  /* ===============================
+     MESSAGE
+  =============================== */
+
+  const thankYouMessage =
+    document.querySelector(
+      ".thankyou-message span"
+    );
+
+  if (thankYouMessage) {
+
+    if (type === "mt") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp m tại ngày đặc biệt này nha!";
+
+    } else if (type === "bt") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp bà tại ngày đặc biệt này nha!";
+
+    } else if (type === "ten") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp Tiến tại ngày đặc biệt này nha!";
+
     }
+  }
 
 
-    thankYou.classList.add("show");
+  /* ===============================
+     HIỆN POPUP
+  =============================== */
+
+  popup.classList.add("show");
+
+  document.body.style.overflow = "hidden";
+}
 
 
-    /*
-     * Cuộn nhẹ xuống để người dùng
-     * thấy lời cảm ơn
-     */
+function closeThankYou() {
 
-    setTimeout(() => {
+  const popup =
+    document.getElementById("thankYouPopup");
 
-        thankYou.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+  if (!popup) return;
 
-    }, 100);
+  popup.classList.remove("show");
 
+  document.body.style.overflow = "";
+}
+
+
+/* Click ra ngoài popup để đóng */
+
+const thankYouPopup =
+  document.getElementById("thankYouPopup");
+
+if (thankYouPopup) {
+
+  thankYouPopup.addEventListener(
+    "click",
+    function (event) {
+
+      if (event.target === this) {
+        closeThankYou();
+      }
+
+    }
+  );
 }
 
 
@@ -318,40 +464,186 @@ function showThankYou() {
 ===================================================== */
 
 document.addEventListener(
-    "keydown",
-    (event) => {
+  "keydown",
+  (event) => {
 
-        /*
-         * Enter / Space ở màn hình phong bì
-         */
+    /*
+     * Enter / Space ở màn hình phong bì
+     */
 
-        if (
-            currentScreen === "envelopeScreen" &&
-            (
-                event.key === "Enter" ||
-                event.key === " "
-            )
-        ) {
+    if (
+      currentScreen === "envelopeScreen" &&
+      (
+        event.key === "Enter" ||
+        event.key === " "
+      )
+    ) {
 
-            event.preventDefault();
+      event.preventDefault();
 
-            openInvitation();
-        }
-
+      openInvitation();
     }
+
+  }
 );
 
-function getGuestName() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("guest") || "bạn";
+/* =====================================================
+   GUEST
+===================================================== */
+
+function getGuestInfo() {
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const guest =
+    params.get("guest") || "bạn";
+
+  const type =
+    params.get("type") || "ten";
+
+  return {
+    guest: guest,
+    type: type.toLowerCase()
+  };
 }
+
+
+/* =====================================================
+   GUEST TYPE
+===================================================== */
+
+const guestTypes = {
+
+  // Mày / Tao
+  mt: {
+    invitation:
+      "T mời m đến chung vui cùng t trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp m nhé!",
+
+    thankYou:
+      "Cảm ơn m đã đến chung vui cùng t nha. Iu lắm!!!",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. T muốn ngày hôm đó có m ở đó để cùng t ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm trước khi mỗi đứa lại bận với những chặng đường riêng.",
+
+    message2:
+      "M đến nha. Không cần gì nhiều đâu, chỉ cần gặp nhau, nói chuyện, chụp hình rồi cùng t tận hưởng ngày này là vui rồi. Có m ở đó chắc ngày tốt nghiệp của t sẽ vui hơn nhiều lắm đó."
+  },
+
+  // Bà / Tui
+  bt: {
+    invitation:
+      "Tui mời bà đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp bà nhé!",
+
+    thankYou:
+      "Cảm ơn bà đã đến chung vui cùng tui nha. Iu lắm!!!",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
+
+    message2:
+      "Bà đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này một chút. Có bà ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
+
+  // Tên / Tui
+  ten: {
+    invitation:
+      "Tui mời Tiến đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Tiến nhé!",
+
+    thankYou:
+      "Cảm ơn Tiến đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Tiến ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
+    message2:
+      "Tiến đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này một chút. Có Tiến ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  }
+
+};
+
+
+/* =====================================================
+   RENDER GUEST
+===================================================== */
 
 function renderGuestName() {
-    const guestName = document.getElementById("guestName");
 
-    if (guestName) {
-        guestName.textContent = getGuestName();
-    }
+  const {
+    guest,
+    type
+  } = getGuestInfo();
+
+  const guestName =
+    document.getElementById("guestName");
+
+  const guestMessage =
+    document.getElementById("guestMessage");
+
+  const thankYouTitle =
+    document.getElementById("thankYouTitle");
+
+  const thankYouText =
+    document.querySelector("#thankYou p");
+
+  const message1 =
+    document.getElementById("message1");
+
+  const message2 =
+    document.getElementById("message2");
+
+  const guestType =
+    guestTypes[type] || guestTypes.ten;
+
+
+  // Tên khách
+  if (guestName) {
+    guestName.textContent = guest;
+  }
+
+
+  // Lời mời
+  if (guestMessage) {
+    guestMessage.textContent =
+      guestType.invitation.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+  // Tiêu đề cảm ơn
+  if (thankYouTitle) {
+    thankYouTitle.textContent =
+      guestType.thankYouTitle.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+  // Lời cảm ơn
+  if (thankYouText) {
+    thankYouText.textContent =
+      guestType.thankYou.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+  if (message1) {
+    message1.textContent =
+      guestType.message1.replace("{guest}", guest);
+  }
+
+  if (message2) {
+    message2.textContent =
+      guestType.message2.replace("{guest}", guest);
+  }
 }
-
-document.addEventListener("DOMContentLoaded", renderGuestName);
