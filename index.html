@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -28,9 +28,7 @@
 
         <div class="thankyou-popup">
 
-            <button
-                class="thankyou-close"
-                onclick="closeThankYou()">
+            <button class="thankyou-close" onclick="closeThankYou()">
                 ×
             </button>
 
@@ -62,9 +60,7 @@
                 </span>
             </div>
 
-            <button
-                class="thankyou-ok"
-                onclick="closeThankYou()">
+            <button class="thankyou-ok" onclick="closeThankYou()">
                 Iu quá, hẹn gặp nhé 💕
             </button>
 
@@ -100,12 +96,12 @@
                 MỘT ĐIỀU ĐẶC BIỆT
             </span>
 
-            <h1>
+            <h1 id="titleEnvelope">
                 Bạn có một<br>
                 chiếc thư mời
             </h1>
 
-            <p>
+            <p id="envelopeMessage">
                 Có một điều mình muốn gửi đến bạn.
             </p>
 
@@ -114,9 +110,7 @@
 
         <!-- ENVELOPE -->
 
-        <div
-            class="envelope-wrapper"
-            onclick="openInvitation()">
+        <div class="envelope-wrapper" onclick="openInvitation()">
 
             <!-- Trái tim lấp lánh -->
 
@@ -164,9 +158,7 @@
         </div>
 
 
-        <button
-            class="open-label"
-            onclick="openInvitation()">
+        <button class="open-label" onclick="openInvitation()">
             ✨ Chạm vào phong bì để mở ✨
         </button>
 
@@ -392,20 +384,16 @@
             <div class="button-group">
 
 
-                <button
-                    class="btn btn-primary"
-                    onclick="showThankYou()">
+                <button class="btn btn-primary" onclick="showThankYou()">
 
                     💗 MÌNH SẼ ĐẾN
 
                 </button>
 
 
-                <a
-                    class="btn btn-secondary"
+                <a class="btn btn-secondary"
                     href="https://www.google.com/maps/search/?api=1&query=Trường+Đại+học+Sài+Gòn+273+An+Dương+Vương"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                    target="_blank" rel="noopener noreferrer">
 
                     📍 XEM ĐỊA ĐIỂM
 

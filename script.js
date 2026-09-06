@@ -397,31 +397,44 @@ function showThankYou() {
 
   if (thankYouMessage) {
 
-    if (type === "mt") {
+    if (type === "A") {
 
       thankYouMessage.textContent =
         "Hẹn gặp m tại ngày đặc biệt này nha!";
 
-    } else if (type === "bt") {
+    } else if (type === "M" || type === "N") {
 
       thankYouMessage.textContent =
-        "Hẹn gặp bà tại ngày đặc biệt này nha!";
+        "Hẹn gặp chí cốt của tui tại ngày đặc biệt này nha!";
 
-    } else if (type === "ten") {
+    } else if (type === "T") {
 
       thankYouMessage.textContent =
         "Hẹn gặp Tiến tại ngày đặc biệt này nha!";
 
-    } else if (type === "family") {
+    } else if (type === "GL") {
 
       thankYouMessage.textContent =
-        "Con hẹn gặp cả nhà mình tại ngày đặc biệt này nha!";
+        "Hẹn gặp Gia Linh tại ngày đặc biệt này nha!";
 
-    } else if (type === "littleAunt") {
+    } else if (type === "NL") {
 
       thankYouMessage.textContent =
-        "Con hẹn gặp Út Mi tại ngày đặc biệt này nha!";
+        "Hẹn gặp Ngọc Linh tại ngày đặc biệt này nha!";
 
+    } else if (type === "T") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp Trang tại ngày đặc biệt này nha!";
+
+    } else if (type === "H") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp Hạnh tại ngày đặc biệt này nha!";
+    } else if (type === "Y") {
+
+      thankYouMessage.textContent =
+        "Hẹn gặp Ý tại ngày đặc biệt này nha!";
     }
   }
 
@@ -502,22 +515,16 @@ document.addEventListener(
 ===================================================== */
 
 function getGuestInfo() {
+  const params = new URLSearchParams(window.location.search);
 
-  const params =
-    new URLSearchParams(window.location.search);
-
-  const guest =
-    params.get("guest") || "bạn";
-
-  const type =
-    params.get("type") || "ten";
+  const guest = params.get("guest") || "bạn";
+  const type = (params.get("type") || "A").toUpperCase();
 
   return {
-    guest: guest,
-    type: type.toLowerCase()
+    guest,
+    type
   };
 }
-
 
 /* =====================================================
    GUEST TYPE
@@ -525,95 +532,215 @@ function getGuestInfo() {
 
 const guestTypes = {
 
-  // Mày / Tao
-  mt: {
+  // A
+  A: {
+    titleEnvelope:
+      "Ngọc An có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt t muốn gửi đến m!",
+
     invitation:
       "T mời m đến chung vui cùng t trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp m nhé!",
+      "Hẹn gặp m nha!",
 
     thankYou:
       "Cảm ơn m đã đến chung vui cùng t nha. Iu lắm!!!",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. T muốn ngày hôm đó có m ở đó để cùng t ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm trước khi mỗi đứa lại bận với những chặng đường riêng.",
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. T muốn ngày hôm đó có m ở đó để cùng t ăn mừng, chụp 7749 tấm hình và lưu lại vài kỷ niệm trước khi mỗi đứa lại bận với những chặng đường riêng.",
 
     message2:
-      "M đến nha. Không cần gì nhiều đâu, chỉ cần gặp nhau, nói chuyện, chụp hình rồi cùng t tận hưởng ngày này là vui rồi. Có m ở đó chắc ngày tốt nghiệp của t sẽ vui hơn nhiều lắm đó."
+      "M đến nha. Không cần gì nhiều đâu, chỉ cần gặp nhau, nói chuyện, chụp hình rồi cùng t tận hưởng ngày này là vui rồi. Có m ở đó thì ngày tốt nghiệp của t sẽ vui hơn nhiều lắm đó. Bạn ruột của t!!!"
   },
 
-  // Bà / Tui
-  bt: {
+  // M
+  M: {
+    titleEnvelope:
+      "Mai Mai có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Mai Mai!",
+
     invitation:
-      "Tui mời bà đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+      "Tui mời Mai Mai đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp bà nhé!",
+      "Hẹn gặp bà nha!",
 
     thankYou:
       "Cảm ơn bà đã đến chung vui cùng tui nha. Iu lắm!!!",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
 
     message2:
-      "Bà đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+      "Bà đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Chí cốt của tui!!!"
   },
 
-  // Tên / Tui
-  ten: {
+  // N
+  N: {
+    titleEnvelope:
+      "Ngọc Nga có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Ngọc Nga!",
+
+    invitation:
+      "Tui mời Ngọc Nga đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp bà nha!",
+
+    thankYou:
+      "Cảm ơn bà đã đến chung vui cùng tui nha. Iu lắm!!!",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+
+    message2:
+      "Bà đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Chí cốt của tui!!!"
+  },
+
+  // T
+  T: {
+    titleEnvelope:
+      "Tăng Tiến có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Tiến!",
+
     invitation:
       "Tui mời Tiến đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp Tiến nhé!",
+      "Hẹn gặp Tiến nha!",
 
     thankYou:
       "Cảm ơn Tiến đã đến chung vui cùng tui nha.",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Tiến ở đó để cùng tui ăn mừng một chút, chụp vài tấm hình và lưu lại vài kỷ niệm của những năm đại học.",
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Tiến ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
-      "Tiến đến nha. Mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Tiến ở đó chắc ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+      "Tiến đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Tiến ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
   },
 
-  // Gia đình
-  family: {
+  // GL
+  GL: {
+    titleEnvelope:
+      "Gia Linh có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Gia Linh!",
+
     invitation:
-      "Dạ, con xin mời cả nhà đến tham dự lễ tốt nghiệp của con nha. Con mong hôm đó cả nhà mình sẽ có mặt đông đủ để cùng con vui một ngày thật đặc biệt.",
+      "Tui mời Gia Linh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp cả nhà nha!",
+      "Hẹn gặp Gia Linh nha!",
 
     thankYou:
-      "Con cảm ơn cả nhà đã đến chung vui và cùng con lưu lại một ngày thật đáng nhớ nha.",
+      "Cảm ơn Gia Linh đã đến chung vui cùng tui nha.",
 
     message1:
-      "Vậy là 4,5 năm đại học của con cũng sắp kết thúc rồi. Nghĩ lại cũng nhanh thật, từ ngày bắt đầu đi học đến lúc chuẩn bị tốt nghiệp đã là một chặng đường khá dài. Con muốn ngày hôm đó có cả nhà ở bên để cùng con ăn mừng, chụp vài tấm hình và lưu lại những kỷ niệm thật đẹp ạ.",
-
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Gia Linh ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
-      "Cả nhà đến với con nha. Gia đình mình cùng gặp nhau, nói chuyện, chụp hình rồi cùng con tận hưởng ngày tốt nghiệp một chút. Với con, có cả nhà cùng đến chắc chắn ngày hôm đó sẽ vui và ý nghĩa hơn rất nhiều."
+      "Gia Linh đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Gia Linh ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
   },
 
-  // Cô út
-  littleAunt: {
+  // NL
+  NL: {
+    titleEnvelope:
+      "Ngọc Linh có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Ngọc Linh!",
+
     invitation:
-      "Dạ, con xin mời Út Mi đến tham dự lễ tốt nghiệp của con nha. Con mong hôm đó Út Mi sẽ đến chung vui và cùng con lưu lại một ngày thật đặc biệt.",
+      "Tui mời Ngọc Linh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp Út Mi nha!",
+      "Hẹn gặp Ngọc Linh nha!",
 
     thankYou:
-      "Con cảm ơn Út Mi đã đến chung vui và dành thời gian cùng con trong ngày đặc biệt này nha.",
+      "Cảm ơn Ngọc Linh đã đến chung vui cùng tui nha.",
 
     message1:
-      "Vậy là 4,5 năm đại học của con cũng đã tới lúc kết thúc rồi. Nghĩ lại cũng nhanh thật, từ ngày bắt đầu đi học đến lúc chuẩn bị tốt nghiệp đã là một chặng đường khá dài. Con muốn ngày hôm đó có những người thân của mình ở bên, và con cũng rất mong Út Mi sẽ có mặt để cùng con ăn mừng, chụp vài tấm hình và lưu lại một kỷ niệm thật đẹp ạ.",
-
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Ngọc Linh ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
-      "Nếu Út Mi lên được, út đến với con nha. Hai cô cháu mình cùng gặp nhau, nói chuyện, chụp hình rồi cùng nhau tận hưởng ngày tốt nghiệp một chút. Có Út Mi đến chung vui chắc ngày hôm đó của con sẽ vui hơn nhiều lắm."
-  }
+      "Ngọc Linh đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Ngọc Linh ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
 
+  // T
+  T: {
+    titleEnvelope:
+      "Trang có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Trang!",
+
+    invitation:
+      "Tui mời Trang đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Trang nha!",
+
+    thankYou:
+      "Cảm ơn Trang đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Trang ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Trang đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Trang ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
+
+  // H
+  H: {
+    titleEnvelope:
+      "Hạnh có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Hạnh!",
+
+    invitation:
+      "Tui mời Hạnh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Hạnh nha!",
+
+    thankYou:
+      "Cảm ơn Hạnh đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Hạnh ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Hạnh đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Hạnh ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
+
+  // Y
+  Y: {
+    titleEnvelope:
+      "Như Ý có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt tui muốn gửi đến Ý!",
+
+    invitation:
+      "Tui mời Ý đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Ý nha!",
+
+    thankYou:
+      "Cảm ơn Ý đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Ý ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Ý đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Ý ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Và tui đợi ngày tốt nghiệp của Ý nha hihi!!!"
+  },
 };
 
 
@@ -623,16 +750,19 @@ const guestTypes = {
 
 function renderGuestName() {
 
-  const {
-    guest,
-    type
-  } = getGuestInfo();
+  const { guest, type } = getGuestInfo();
 
   const guestName =
     document.getElementById("guestName");
 
   const guestMessage =
     document.getElementById("guestMessage");
+
+  const titleEnvelope =
+    document.getElementById("titleEnvelope");
+
+  const envelopeMessage =
+    document.getElementById("envelopeMessage");
 
   const thankYouTitle =
     document.getElementById("thankYouTitle");
@@ -647,7 +777,7 @@ function renderGuestName() {
     document.getElementById("message2");
 
   const guestType =
-    guestTypes[type] || guestTypes.ten;
+    guestTypes[type] || guestTypes.A;
 
 
   // Tên khách
@@ -665,6 +795,27 @@ function renderGuestName() {
       );
   }
 
+
+  // Tiêu đề phong bì
+  if (titleEnvelope) {
+    titleEnvelope.innerHTML =
+      guestType.titleEnvelope.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+
+  // Lời nhắn trong phong bì
+  if (envelopeMessage) {
+    envelopeMessage.innerHTML =
+      guestType.envelopeMessage.replace(
+        "{guest}",
+        guest
+      );
+  }
+
+
   // Tiêu đề cảm ơn
   if (thankYouTitle) {
     thankYouTitle.textContent =
@@ -673,6 +824,7 @@ function renderGuestName() {
         guest
       );
   }
+
 
   // Lời cảm ơn
   if (thankYouText) {
@@ -683,13 +835,23 @@ function renderGuestName() {
       );
   }
 
+
+  // Message 1
   if (message1) {
     message1.textContent =
-      guestType.message1.replace("{guest}", guest);
+      guestType.message1.replace(
+        "{guest}",
+        guest
+      );
   }
 
+
+  // Message 2
   if (message2) {
     message2.textContent =
-      guestType.message2.replace("{guest}", guest);
+      guestType.message2.replace(
+        "{guest}",
+        guest
+      );
   }
 }
