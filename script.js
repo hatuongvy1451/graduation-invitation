@@ -407,7 +407,7 @@ function showThankYou() {
       thankYouMessage.textContent =
         "Hẹn gặp chí cốt của tui tại ngày đặc biệt này nha!";
 
-    } else if (type === "T") {
+    } else if (type === "TT") {
 
       thankYouMessage.textContent =
         "Hẹn gặp Tiến tại ngày đặc biệt này nha!";
@@ -435,6 +435,15 @@ function showThankYou() {
 
       thankYouMessage.textContent =
         "Hẹn gặp Ý tại ngày đặc biệt này nha!";
+
+    } else if (type === "F") {
+      thankYouMessage.textContent =
+        "Con hẹn gặp cả nhà mình tại ngày đặc biệt này nha!";
+    }
+
+    else if (type === "UM") {
+      thankYouMessage.textContent =
+        "Con hẹn gặp Út Mi tại ngày đặc biệt này nha!";
     }
   }
 
@@ -604,8 +613,8 @@ const guestTypes = {
       "Bà đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Chí cốt của tui!!!"
   },
 
-  // T
-  T: {
+  // TT
+  TT: {
     titleEnvelope:
       "Tăng Tiến có một<br>chiếc thư mời",
 
@@ -740,6 +749,52 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Ý ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
       "Ý đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Ý ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Và tui đợi ngày tốt nghiệp của Ý nha hihi!!!"
+  },
+
+  // F
+  F: {
+    titleEnvelope:
+      "Cả nhà mình có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt con muốn gửi đến cả gia đình mình!",
+
+    invitation:
+      "Dạ con mời gia đình của con đến chung vui cùng con trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Con hẹn gặp cả nhà mình ạ!",
+
+    thankYou:
+      "Cảm ơn cả nhà đã đến chung vui cùng con nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có cả nhà ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Cả nhà đến nha. Có gia đình bên cạnh con rất là vui và hạnh phúc lắm. Gia đình là số 1 của con!!!"
+  },
+
+  // UM
+  UM: {
+    titleEnvelope:
+      "Út Mi có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt con muốn gửi đến Út Mi!",
+
+    invitation:
+      "Dạ con mời Út Mi đến chung vui cùng con trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Út Mi nha!",
+
+    thankYou:
+      "Cảm ơn Út Mi đã đến chung vui cùng con ạ.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Út Mi ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Út Mi có thời gian thì đến với con nha. Có Út Mi bên cạnh con rất là vui và hạnh phúc lắm. Con yêu cô út của con!!!"
   },
 };
 
