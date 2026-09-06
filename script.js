@@ -349,7 +349,7 @@ function showThankYou() {
   } = getGuestInfo();
 
   const guestType =
-    guestTypes[type] || guestTypes.ten;
+    guestTypes[type] || guestTypes.A;
 
 
   /* ===============================
