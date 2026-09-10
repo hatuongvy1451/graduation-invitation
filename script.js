@@ -543,6 +543,15 @@ const guestTypes = {
 
   // A
   A: {
+    messageButton:
+      "♡ Có điều t muốn nói với m... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho t xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù t biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Ngọc An có một<br>chiếc thư mời",
 
@@ -567,6 +576,15 @@ const guestTypes = {
 
   // M
   M: {
+    messageButton:
+      "♡ Có điều tui muốn nói với bà... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Mai Mai có một<br>chiếc thư mời",
 
@@ -591,6 +609,15 @@ const guestTypes = {
 
   // N
   N: {
+    messageButton:
+      "♡ Có điều tui muốn nói với bà... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Ngọc Nga có một<br>chiếc thư mời",
 
@@ -615,6 +642,15 @@ const guestTypes = {
 
   // TT
   TT: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Tiến... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Tăng Tiến có một<br>chiếc thư mời",
 
@@ -638,6 +674,15 @@ const guestTypes = {
 
   // GL
   GL: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Gia Linh... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Gia Linh có một<br>chiếc thư mời",
 
@@ -661,6 +706,15 @@ const guestTypes = {
 
   // NL
   NL: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Ngọc Linh... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Ngọc Linh có một<br>chiếc thư mời",
 
@@ -684,6 +738,15 @@ const guestTypes = {
 
   // T
   T: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Trang... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Trang có một<br>chiếc thư mời",
 
@@ -707,6 +770,15 @@ const guestTypes = {
 
   // H
   H: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Hạnh... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Hạnh có một<br>chiếc thư mời",
 
@@ -730,6 +802,15 @@ const guestTypes = {
 
   // Y
   Y: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Ý... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
     titleEnvelope:
       "Như Ý có một<br>chiếc thư mời",
 
@@ -753,6 +834,12 @@ const guestTypes = {
 
   // F
   F: {
+    messageButton:
+      "♡ Có điều con muốn nói với gia đình mình... Nhấn vào để mở ra đọc nha ạ ♡",
+
+    messageButtonClose:
+      "💗 Gia đình mình đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
+
     titleEnvelope:
       "Cả nhà mình có một<br>chiếc thư mời",
 
@@ -776,6 +863,12 @@ const guestTypes = {
 
   // UM
   UM: {
+    messageButton:
+      "♡ Có điều con muốn nói với Út Mi... Nhấn vào để mở ra đọc nha ạ ♡",
+
+    messageButtonClose:
+      "💗 Út Mi đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
+
     titleEnvelope:
       "Út Mi có một<br>chiếc thư mời",
 
@@ -813,6 +906,9 @@ function renderGuestName() {
   const guestMessage =
     document.getElementById("guestMessage");
 
+  const rsvpDescription =
+    document.getElementById("rsvpDescription");
+
   const titleEnvelope =
     document.getElementById("titleEnvelope");
 
@@ -834,6 +930,14 @@ function renderGuestName() {
   const guestType =
     guestTypes[type] || guestTypes.A;
 
+  // Nút mở message
+  const messageButton =
+    document.querySelector(".secret-message-btn");
+
+  if (messageButton) {
+    messageButton.textContent =
+      guestType.messageButton;
+  }
 
   // Tên khách
   if (guestName) {
@@ -850,6 +954,14 @@ function renderGuestName() {
       );
   }
 
+  // Mô tả xác nhận
+  if (rsvpDescription) {
+    rsvpDescription.textContent =
+      guestType.rsvpDescription.replace(
+        "{guest}",
+        guest
+      );
+  }
 
   // Tiêu đề phong bì
   if (titleEnvelope) {
@@ -908,5 +1020,170 @@ function renderGuestName() {
         "{guest}",
         guest
       );
+  }
+}
+
+/* =================================================
+   RSVP FORM
+================================================= */
+
+let rsvpGuestNumber = 1;
+
+
+/* MỞ FORM */
+
+function openRSVP() {
+    const { type } = getGuestInfo();
+
+    if (type === "F" || type === "UM") {
+        showThankYou();
+        return;
+    }
+
+    document.getElementById("rsvpPopup").classList.add("show");
+}
+
+
+/* ĐÓNG FORM */
+
+function closeRSVP() {
+
+  const popup = document.getElementById("rsvpPopup");
+
+  if (!popup) return;
+
+  popup.classList.remove("show");
+
+  document.body.style.overflow = "";
+
+}
+
+
+/* SỐ NGƯỜI THAM DỰ */
+
+function changeGuestNumber(value) {
+
+  rsvpGuestNumber += value;
+
+  if (rsvpGuestNumber < 1) {
+    rsvpGuestNumber = 1;
+  }
+
+  if (rsvpGuestNumber > 10) {
+    rsvpGuestNumber = 10;
+  }
+
+  const number =
+    document.getElementById("rsvpGuestNumber");
+
+  if (number) {
+    number.textContent = rsvpGuestNumber;
+  }
+
+}
+
+
+/* SUBMIT */
+
+function submitRSVP(event) {
+  event.preventDefault();
+
+  const form = document.getElementById("rsvpForm");
+
+  const name = document.getElementById("rsvpName").value.trim();
+  const contact = document.getElementById("rsvpContact").value.trim();
+
+  if (!name) {
+    alert("Vui lòng nhập tên của bạn nha 💗");
+    return;
+  }
+
+  if (!contact) {
+    alert("Vui lòng nhập thông tin liên hệ nha 💗");
+    return;
+  }
+
+  emailjs.sendForm(
+    "service_wvbf5le",
+    "template_6mbdsnq",
+    form
+  )
+    .then(function () {
+
+      console.log("Gửi xác nhận thành công!");
+
+      // Đóng form xác nhận
+      closeRSVP();
+
+      // Hiện popup cảm ơn
+      showThankYou();
+
+      // Xóa dữ liệu form
+      form.reset();
+
+    })
+    .catch(function (error) {
+
+      console.error("EmailJS Error:", error);
+
+      alert(
+        "Không gửi được thông tin. Bạn thử lại giúp mình nha 💗"
+      );
+    });
+}
+
+/* CLICK RA NGOÀI POPUP */
+
+document.addEventListener(
+  "click",
+  function (event) {
+
+    const popup =
+      document.getElementById("rsvpPopup");
+
+    if (!popup) return;
+
+    if (
+      event.target === popup
+    ) {
+      closeRSVP();
+    }
+
+  }
+);
+
+
+/* ESC */
+
+document.addEventListener(
+  "keydown",
+  function (event) {
+
+    if (event.key === "Escape") {
+      closeRSVP();
+    }
+
+  }
+);
+
+function toggleMessage() {
+  const message = document.getElementById("hiddenMessage");
+  const button = document.querySelector(".secret-message-btn");
+
+  if (!message || !button) return;
+
+  const { type } = getGuestInfo();
+
+  const guestType =
+    guestTypes[type] || guestTypes.A;
+
+  message.classList.toggle("show");
+
+  if (message.classList.contains("show")) {
+    button.textContent =
+      guestType.messageButtonClose;
+  } else {
+    button.textContent =
+      guestType.messageButton;
   }
 }

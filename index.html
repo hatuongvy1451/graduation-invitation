@@ -7,7 +7,6 @@
 
     <title>Thư mời lễ tốt nghiệp | Hà Tường Vy</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -15,62 +14,15 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- =====================================================
-         THANK YOU POPUP
-    ====================================================== -->
-
-    <div id="thankYouPopup" class="thankyou-overlay">
-
-        <div class="thankyou-popup">
-
-            <button class="thankyou-close" onclick="closeThankYou()">
-                ×
-            </button>
-
-            <div class="thankyou-icon">
-                💗
-            </div>
-
-            <div class="thankyou-sparkles">
-                ✦　♡　✦
-            </div>
-
-            <span class="thankyou-label">
-                THANK YOU
-            </span>
-
-            <h2 id="thankYouTitle">
-                Hẹn gặp bạn nhé!
-            </h2>
-
-            <p id="thankYouText">
-                Cảm ơn bạn đã dành thời gian<br>
-                và nhận lời tham dự lễ tốt nghiệp của mình.
-            </p>
-
-            <div class="thankyou-message">
-                🎓
-                <span id="thankYouMessage">
-                    Hẹn gặp bạn tại ngày đặc biệt này!
-                </span>
-            </div>
-
-            <button class="thankyou-ok" onclick="closeThankYou()">
-                Iu quá, hẹn gặp nhé 💕
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         DECORATIONS
+         BACKGROUND DECORATION
     ====================================================== -->
 
     <div class="global-decor decor-1">✦</div>
@@ -80,7 +32,7 @@
 
 
     <!-- =====================================================
-         01. PHONG BÌ
+         01. ENVELOPE
     ====================================================== -->
 
     <section id="envelopeScreen" class="page active">
@@ -89,19 +41,18 @@
         <div class="envelope-bg-star e2">✧</div>
         <div class="envelope-bg-star e3">✨</div>
 
-
         <div class="envelope-title">
 
             <span class="section-label">
                 MỘT ĐIỀU ĐẶC BIỆT
             </span>
 
-            <h1 id="titleEnvelope">
+            <h1>
                 Bạn có một<br>
                 chiếc thư mời
             </h1>
 
-            <p id="envelopeMessage">
+            <p>
                 Có một điều mình muốn gửi đến bạn.
             </p>
 
@@ -112,8 +63,6 @@
 
         <div class="envelope-wrapper" onclick="openInvitation()">
 
-            <!-- Trái tim lấp lánh -->
-
             <span class="sparkle-heart heart-1">♥</span>
             <span class="sparkle-heart heart-2">♥</span>
             <span class="sparkle-heart heart-3">♥</span>
@@ -121,17 +70,12 @@
             <span class="sparkle-heart heart-5">♥</span>
             <span class="sparkle-heart heart-6">♥</span>
 
-
             <div class="envelope">
 
                 <div class="envelope-back"></div>
 
-
                 <div class="envelope-letter">
-
-                    <span>
-                        🎓
-                    </span>
+                    <span>🎓</span>
 
                     <strong>
                         LỄ TỐT NGHIỆP
@@ -140,14 +84,11 @@
                     <small>
                         HÀ TƯỜNG VY
                     </small>
-
                 </div>
-
 
                 <div class="envelope-body"></div>
 
                 <div class="envelope-flap"></div>
-
 
                 <div class="envelope-seal">
                     ✦
@@ -165,52 +106,28 @@
     </section>
 
 
-
     <!-- =====================================================
-         02. THIỆP MỜI
+         02. INVITATION
     ====================================================== -->
 
     <section id="invitationScreen" class="page">
 
-
-        <div class="main-bg-decoration main-d1">
-            🌸
-        </div>
-
-        <div class="main-bg-decoration main-d2">
-            🎓
-        </div>
-
-        <div class="main-bg-decoration main-d3">
-            ✨
-        </div>
+        <div class="main-bg-decoration main-d1">🌸</div>
+        <div class="main-bg-decoration main-d2">🎓</div>
+        <div class="main-bg-decoration main-d3">✨</div>
 
 
         <div class="invitation-card">
 
-
             <!-- Decorative corners -->
 
-            <div class="card-corner corner-1">
-                🌷
-            </div>
-
-            <div class="card-corner corner-2">
-                🎀
-            </div>
-
-            <div class="card-corner corner-3">
-                ✨
-            </div>
-
-            <div class="card-corner corner-4">
-                🌸
-            </div>
+            <div class="card-corner corner-1">🌷</div>
+            <div class="card-corner corner-2">🎀</div>
+            <div class="card-corner corner-3">✨</div>
+            <div class="card-corner corner-4">🌸</div>
 
 
-            <!-- =================================================
-                 CARD TOP
-            ================================================== -->
+            <!-- CARD TOP -->
 
             <div class="card-top">
 
@@ -235,9 +152,7 @@
             </div>
 
 
-            <!-- =================================================
-                 GRADUATE
-            ================================================== -->
+            <!-- GRADUATE -->
 
             <div class="graduate">
 
@@ -249,6 +164,12 @@
                     HÀ TƯỜNG VY
                 </h2>
 
+                <div class="name-line">
+                    <i></i>
+                    ---------- ♡ ----------
+                    <i></i>
+                </div>
+
                 <p>
                     Kỹ sư Công nghệ thông tin
                 </p>
@@ -256,9 +177,7 @@
             </div>
 
 
-            <!-- =================================================
-                 GUEST
-            ================================================== -->
+            <!-- GUEST -->
 
             <div class="guest-box">
 
@@ -284,12 +203,9 @@
             </div>
 
 
-            <!-- =================================================
-                 EVENT INFORMATION
-            ================================================== -->
+            <!-- EVENT INFORMATION -->
 
             <div class="event-info">
-
 
                 <div class="event-item">
 
@@ -348,9 +264,44 @@
             </div>
 
 
-            <!-- =================================================
-                 MESSAGE
-            ================================================== -->
+            <!-- CONTACT -->
+
+            <div class="contact-section">
+
+                <span class="contact-label">
+                    ♡ NẾU CẦN LIÊN HỆ ♡
+                </span>
+
+                <div class="contact-list">
+
+                    <a href="tel:0934964623" class="contact-item">
+                        <span class="contact-icon">
+                            📞
+                        </span>
+
+                        <span>
+                            0934 964 623
+                        </span>
+                    </a>
+
+
+                    <a href="https://www.facebook.com/ha.tuongvy.501/" target="_blank" rel="noopener noreferrer"
+                        class="contact-item">
+                        <span class="contact-icon facebook-icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+
+                        <span>
+                            Hà Tường Vy
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
 
             <div class="message-box">
 
@@ -358,17 +309,21 @@
                     “
                 </span>
 
-                <p id="message1">
-                    Có thể đây chỉ là một buổi lễ tốt nghiệp,
-                    nhưng với mình, đó là khoảnh khắc
-                    đánh dấu một hành trình dài đã đi qua.
-                </p>
+                <button type="button" class="secret-message-btn" onclick="toggleMessage()">
 
-                <p id="message2">
-                    Mình rất mong được gặp bạn tại buổi lễ,
-                    để cùng nhau chia sẻ niềm vui
-                    và lưu lại một kỷ niệm đáng nhớ.
-                </p>
+                </button>
+
+                <div id="hiddenMessage" class="hidden-message">
+
+                    <p id="message1"> Có thể đây chỉ là một buổi lễ tốt nghiệp, nhưng với mình, đó là khoảnh khắc đánh
+                        dấu một hành trình dài đã đi qua.
+                    </p>
+
+                    <p id="message2"> Mình rất mong được gặp bạn tại buổi lễ, để cùng nhau chia sẻ niềm vui và lưu lại
+                        một kỷ niệm đáng nhớ.
+                    </p>
+
+                </div>
 
                 <span class="quote-mark end">
                     ”
@@ -376,35 +331,24 @@
 
             </div>
 
-
-            <!-- =================================================
-                 BUTTONS
-            ================================================== -->
+            <!-- BUTTONS -->
 
             <div class="button-group">
 
-
-                <button class="btn btn-primary" onclick="showThankYou()">
-
+                <button class="btn btn-primary" onclick="openRSVP()">
                     💗 SẼ ĐẾN NHA
-
                 </button>
-
 
                 <a class="btn btn-secondary"
                     href="https://www.google.com/maps/search/?api=1&query=Trường+Đại+học+Sài+Gòn+273+An+Dương+Vương"
                     target="_blank" rel="noopener noreferrer">
-
                     📍 XEM ĐỊA ĐIỂM
-
                 </a>
 
             </div>
 
 
-            <!-- =================================================
-                 FOOTER
-            ================================================== -->
+            <!-- FOOTER -->
 
             <div class="card-footer">
 
@@ -422,11 +366,205 @@
 
             </div>
 
-
         </div>
 
     </section>
 
+    <!-- =================================================
+     03. RSVP POPUP
+    ================================================= -->
+
+    <div id="rsvpPopup" class="rsvp-overlay">
+
+        <div class="rsvp-popup">
+
+            <button class="rsvp-close" onclick="closeRSVP()" type="button">
+                ×
+            </button>
+
+            <div class="rsvp-header">
+
+                <div class="rsvp-icon">
+                    💌
+                </div>
+
+                <span>
+                    XÁC NHẬN THAM DỰ
+                </span>
+
+                <p id="rsvpDescription">
+                    Cho mình xin một chút thông tin<br>
+                    để chuẩn bị chu đáo hơn nha ♡
+                </p>
+
+            </div>
+
+
+            <form id="rsvpForm" onsubmit="submitRSVP(event)">
+
+                <!-- HỌ VÀ TÊN -->
+                <div class="rsvp-field">
+
+                    <label for="rsvpName">
+                        TÊN BẠN LÀ GÌ NÈ?
+                    </label>
+
+                    <input type="text" id="rsvpName" name="name" placeholder="Nhập vào đây nha..." required>
+
+                </div>
+
+
+                <!-- THÔNG TIN LIÊN HỆ -->
+                <div class="rsvp-field">
+
+                    <label for="rsvpContact">
+                        BẠN MUỐN MÌNH LIÊN HỆ QUA GÌ NÈ?
+                    </label>
+
+                    <input type="text" id="rsvpContact" name="contact" placeholder="SĐT/FB hoặc gì cũng được nha"
+                        required>
+
+                </div>
+
+
+                <!-- THAM DỰ -->
+                <div class="rsvp-field">
+
+                    <label>
+                        BẠN SẼ THAM DỰ CHỨ?
+                    </label>
+
+                    <div class="radio-group">
+
+                        <label class="radio-card">
+
+                            <input type="radio" name="attendance" value="Có, chắc chắn rồi" checked>
+
+                            <span class="radio-content">
+
+                                <strong>
+                                    💗 Có, chắc chắn rồi
+                                </strong>
+
+                                <small>
+                                    Hẹn gặp tại buổi lễ nhé!
+                                </small>
+
+                            </span>
+
+                        </label>
+
+
+                        <label class="radio-card">
+
+                            <input type="radio" name="attendance" value="Tiếc quá, mình không thể đến">
+
+                            <span class="radio-content">
+
+                                <strong>
+                                    🌷 Tiếc quá, mình không thể đến
+                                </strong>
+
+                                <small>
+                                    Hẹn dịp khác nha!
+                                </small>
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LỜI NHẮN -->
+                <div class="rsvp-field">
+
+                    <label for="rsvpNote">
+                        LỜI NHẮN
+
+                        <small>
+                            KHÔNG BẮT BUỘC
+                        </small>
+                    </label>
+
+                    <textarea id="rsvpNote" name="note" rows="3"
+                        placeholder="Có điều gì muốn nhắn gửi đến tui hong nè... ♡"></textarea>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button type="submit" class="rsvp-submit">
+                    💗 XÁC NHẬN
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <!-- =====================================================
+         04. THANK YOU POPUP
+    ====================================================== -->
+
+    <div id="thankYouPopup" class="thankyou-overlay">
+
+        <div class="thankyou-popup">
+
+            <button class="thankyou-close" onclick="closeThankYou()">
+                ×
+            </button>
+
+            <div class="thankyou-icon">
+                💗
+            </div>
+
+            <div class="thankyou-sparkles">
+                ✦　♡　✦
+            </div>
+
+            <span class="thankyou-label">
+                THANK YOU
+            </span>
+
+            <h2 id="thankYouTitle">
+                Hẹn gặp bạn nhé!
+            </h2>
+
+            <p id="thankYouText">
+                Cảm ơn bạn đã dành thời gian<br>
+                và nhận lời tham dự lễ tốt nghiệp của mình.
+            </p>
+
+            <div class="thankyou-message">
+
+                🎓
+
+                <span id="thankYouMessage">
+                    Hẹn gặp bạn tại ngày đặc biệt này!
+                </span>
+
+            </div>
+
+            <button class="thankyou-ok" onclick="closeThankYou()">
+                Iu quá, hẹn gặp nhé 💕
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script>
+        emailjs.init({
+            publicKey: "7P_hVXJvSq8TGPlgI"
+        });
+    </script>
 
     <script src="script.js"></script>
 

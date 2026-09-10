@@ -3118,3 +3118,858 @@ button {
         filter: brightness(1.8);
     }
 }
+
+.contact-section {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(100, 90, 80, 0.15);
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #8b8175;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 10px;
+    text-decoration: none;
+    background: rgba(245, 241, 233, 0.55);
+    border: 1px solid rgba(120, 105, 90, 0.1);
+    border-radius: 8px;
+    color: #4d5964;
+    font-size: 11px;
+    transition: 0.2s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-1px);
+    background: rgba(240, 235, 226, 0.9);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eee9df;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.facebook-icon {
+    color: #1877F2;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .contact-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-item {
+        padding: 8px 5px;
+        font-size: 10px;
+    }
+}
+
+/* =====================================================
+   RSVP CONFIRMATION POPUP
+===================================================== */
+
+.rsvp-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(70, 45, 55, 0.28);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+.rsvp-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.rsvp-popup {
+    position: relative;
+
+    width: min(460px, 100%);
+    max-height: 92vh;
+    overflow-y: auto;
+
+    padding: 34px 30px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfd 0%,
+            #fff8f8 100%
+        );
+
+    border: 1px solid rgba(231, 165, 183, .28);
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(80, 45, 60, .18),
+        0 8px 25px rgba(225, 155, 175, .10);
+
+    transform:
+        translateY(25px)
+        scale(.92);
+
+    transition:
+        transform .4s cubic-bezier(.17, .67, .35, 1.25);
+}
+
+.rsvp-overlay.show .rsvp-popup {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.rsvp-close {
+    position: absolute;
+
+    top: 14px;
+    right: 15px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f9eef1;
+    color: #8b737c;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+}
+
+.rsvp-close:hover {
+    transform: rotate(90deg);
+
+    background: #f5dfe5;
+    color: #b9788c;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.rsvp-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.rsvp-icon {
+    width: 62px;
+    height: 62px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff0f3,
+            #fce3e9
+        );
+
+    box-shadow:
+        0 8px 20px rgba(225, 155, 175, .12);
+
+    font-size: 28px;
+
+    animation:
+        rsvpHeartFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes rsvpHeartFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(3deg);
+    }
+}
+
+.rsvp-header > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #c78c9e;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .2em;
+}
+
+.rsvp-header h2 {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 32px;
+    line-height: 1.05;
+    font-weight: 600;
+
+    color: #5f4d55;
+}
+
+.rsvp-header p {
+    margin-top: 10px;
+
+    color: #98868c;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+#rsvpForm {
+    width: 100%;
+}
+
+
+/* =====================================================
+   FIELD
+===================================================== */
+
+.rsvp-field {
+    margin-bottom: 17px;
+}
+
+.rsvp-field > label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #75616a;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.rsvp-field > label small {
+    color: #b5a5aa;
+
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: .03em;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.rsvp-field input[type="text"],
+.rsvp-field textarea {
+    width: 100%;
+
+    border:
+        1px solid rgba(210, 150, 165, .25);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 250, 251, .9);
+
+    color: #62535a;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+.rsvp-field input[type="text"] {
+    height: 46px;
+    padding: 0 14px;
+}
+
+.rsvp-field textarea {
+    min-height: 88px;
+
+    padding: 12px 14px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+.rsvp-field input::placeholder,
+.rsvp-field textarea::placeholder {
+    color: #b5a5aa;
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus {
+    border-color: #dfa4b5;
+
+    background: #fffdfd;
+
+    box-shadow:
+        0 0 0 4px rgba(223, 164, 181, .10);
+}
+
+
+/* =====================================================
+   RADIO GROUP
+===================================================== */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+
+/* =====================================================
+   RADIO CARD
+===================================================== */
+
+.radio-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid rgba(210, 150, 165, .20);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 250, 251, .75);
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.radio-card:hover {
+    transform: translateY(-1px);
+
+    background: #fff7f8;
+
+    border-color:
+        rgba(210, 150, 165, .38);
+
+    box-shadow:
+        0 6px 15px rgba(210, 150, 165, .08);
+}
+
+
+/* Ẩn radio mặc định */
+
+.radio-card input[type="radio"] {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+
+/* =====================================================
+   RADIO CONTENT
+===================================================== */
+
+.radio-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    padding-left: 29px;
+}
+
+
+/* Custom radio */
+
+.radio-content::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform: translateY(-50%);
+
+    border:
+        1.5px solid #dfacba;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+}
+
+
+/* Dot */
+
+.radio-content::after {
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform:
+        translateY(-50%)
+        scale(0);
+
+    border-radius: 50%;
+
+    background: white;
+
+    transition:
+        transform .2s ease;
+}
+
+
+/* Checked */
+
+.radio-card input:checked + .radio-content::before {
+    border-color: #d992a7;
+    background: #e7a5b7;
+
+    box-shadow:
+        0 0 0 3px rgba(231, 165, 183, .10);
+}
+
+.radio-card input:checked + .radio-content::after {
+    transform:
+        translateY(-50%)
+        scale(1);
+}
+
+
+/* Checked card */
+
+.radio-card:has(input:checked) {
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f4,
+            #fff8f9
+        );
+
+    border-color:
+        rgba(217, 146, 167, .45);
+
+    box-shadow:
+        0 6px 18px rgba(217, 146, 167, .08);
+}
+
+
+/* =====================================================
+   RADIO TEXT
+===================================================== */
+
+.radio-content strong {
+    color: #75636b;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+.radio-content small {
+    color: #a7959c;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+.radio-card input:checked + .radio-content strong {
+    color: #b87589;
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.rsvp-submit {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 5px;
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5a2b3,
+            #d990a5
+        );
+
+    color: white;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(210, 130, 155, .18);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        opacity .25s ease;
+}
+
+.rsvp-submit:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(210, 130, 155, .25);
+}
+
+.rsvp-submit:active {
+    transform: translateY(0);
+}
+
+.rsvp-submit:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   DECORATION
+===================================================== */
+
+.rsvp-popup::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 18px;
+    left: 22px;
+
+    color: #e8b5c2;
+
+    font-size: 18px;
+
+    opacity: .55;
+
+    animation:
+        rsvpDecorFloat 3s ease-in-out infinite;
+}
+
+.rsvp-popup::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 20px;
+
+    color: #e4b0bd;
+
+    font-size: 13px;
+
+    opacity: .5;
+
+    animation:
+        rsvpDecorFloat 3.5s ease-in-out infinite reverse;
+}
+
+@keyframes rsvpDecorFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-5px)
+            rotate(8deg);
+    }
+}
+
+
+/* =====================================================
+   MOBILE RSVP
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .rsvp-overlay {
+        padding: 14px;
+    }
+
+    .rsvp-popup {
+        width: 100%;
+        max-height: 94vh;
+
+        padding:
+            30px 19px 23px;
+
+        border-radius: 23px;
+    }
+
+    .rsvp-header {
+        margin-bottom: 21px;
+    }
+
+    .rsvp-icon {
+        width: 56px;
+        height: 56px;
+
+        margin-bottom: 10px;
+
+        font-size: 25px;
+    }
+
+    .rsvp-header h2 {
+        font-size: 29px;
+    }
+
+    .rsvp-header p {
+        font-size: 11px;
+    }
+
+    .rsvp-field {
+        margin-bottom: 15px;
+    }
+
+    .rsvp-field input[type="text"] {
+        height: 44px;
+    }
+
+    .rsvp-field textarea {
+        min-height: 78px;
+    }
+
+    .radio-card {
+        padding: 10px 11px;
+    }
+
+    .radio-content strong {
+        font-size: 10px;
+    }
+
+    .radio-content small {
+        font-size: 8.5px;
+    }
+
+    .rsvp-submit {
+        min-height: 46px;
+    }
+}
+
+.secret-message-btn {
+    border: none;
+    background: transparent;
+    color: #b98280;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+}
+
+.secret-message-btn:hover {
+    transform: translateY(-2px);
+    color: #9f6d6b;
+}
+
+.hidden-message {
+    display: none;
+    margin-top: 15px;
+    animation: messageOpen 0.4s ease;
+}
+
+.hidden-message.show {
+    display: block;
+}
+
+.hidden-message p {
+    margin: 0 0 14px;
+}
+
+#message3 {
+    color: #b98280;
+    font-weight: 600;
+}
+
+@keyframes messageOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.secret-message-btn {
+    border: none;
+    background: transparent;
+    color: #b98280;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 16px;
+
+    animation: heartbeat 1.8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(1.035);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    55% {
+        transform: scale(1.025);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
+.secret-message-btn:hover {
+    color: #a96f6c;
+    animation-play-state: paused;
+}
