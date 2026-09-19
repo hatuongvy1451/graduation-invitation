@@ -1016,7 +1016,7 @@ function renderGuestName() {
   }
 
   // Mô tả xác nhận
-  if (rsvpDescription) {
+  if (rsvpDescription && guestType.rsvpDescription) {
     rsvpDescription.textContent =
       guestType.rsvpDescription.replace(
         "{guest}",
