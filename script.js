@@ -553,10 +553,10 @@ const guestTypes = {
       "Cho t xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù t biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Ngọc An có một<br>chiếc thư mời",
+      "An ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt t muốn gửi đến m!",
+      "Có một lời mời nhỏ mà t muốn gửi đến m!",
 
     invitation:
       "T mời m đến chung vui cùng t trong ngày tốt nghiệp nhé.",
@@ -586,10 +586,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Mai Mai có một<br>chiếc thư mời",
+      "Mai ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Mai Mai!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến bà!",
 
     invitation:
       "Tui mời Mai Mai đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -619,10 +619,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Ngọc Nga có một<br>chiếc thư mời",
+      "Nga ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Ngọc Nga!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến bà!",
 
     invitation:
       "Tui mời Ngọc Nga đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -652,10 +652,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Tăng Tiến có một<br>chiếc thư mời",
+      "Tiến ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Tiến!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Tiến!",
 
     invitation:
       "Tui mời Tiến đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -684,10 +684,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Gia Linh có một<br>chiếc thư mời",
+      "Gia Linh ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Gia Linh!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Gia Linh!",
 
     invitation:
       "Tui mời Gia Linh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -716,10 +716,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Ngọc Linh có một<br>chiếc thư mời",
+      "Ngọc Linh ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Ngọc Linh!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Ngọc Linh!",
 
     invitation:
       "Tui mời Ngọc Linh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -748,10 +748,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Trang có một<br>chiếc thư mời",
+      "Trang ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Trang!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Trang!",
 
     invitation:
       "Tui mời Trang đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -780,10 +780,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Hạnh có một<br>chiếc thư mời",
+      "Hạnh ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Hạnh!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Hạnh!",
 
     invitation:
       "Tui mời Hạnh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -812,10 +812,10 @@ const guestTypes = {
       "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
 
     titleEnvelope:
-      "Như Ý có một<br>chiếc thư mời",
+      "Ý ơi,<br>mở thiệp nè!",
 
     envelopeMessage:
-      "Có một điều đặc biệt tui muốn gửi đến Ý!",
+      "Có một lời mời nhỏ mà tui muốn gửi đến Ý!",
 
     invitation:
       "Tui mời Ý đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
@@ -841,7 +841,7 @@ const guestTypes = {
       "💗 Gia đình mình đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
 
     titleEnvelope:
-      "Cả nhà mình có một<br>chiếc thư mời",
+      "Cả nhà mình có một<br>chiếc thiệp mời",
 
     envelopeMessage:
       "Có một điều đặc biệt con muốn gửi đến cả gia đình mình!",
@@ -870,7 +870,7 @@ const guestTypes = {
       "💗 Út Mi đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
 
     titleEnvelope:
-      "Út Mi có một<br>chiếc thư mời",
+      "Út Mi có một<br>chiếc thiệp mời",
 
     envelopeMessage:
       "Có một điều đặc biệt con muốn gửi đến Út Mi!",

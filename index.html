@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thư mời lễ tốt nghiệp | Hà Tường Vy</title>
+    <title>Thiệp mời dự lễ tốt nghiệp | Hà Tường Vy</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- Link preview khi chia sẻ -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thiệp mời lễ tốt nghiệp | Hà Tường Vy">
+    <meta property="og:description" content="Trân trọng mời bạn đến chung vui trong ngày tốt nghiệp của Hà Tường Vy 🎓">
+    <meta property="og:url" content="https://hatuongvy1451.github.io/graduation-invitation/">
+
+    <meta property="og:image" content="https://hatuongvy1451.github.io/graduation-invitation/images/cover.png">
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thiệp mời dự lễ tốt nghiệp | Hà Tường Vy">
+    <meta name="twitter:image" content="https://hatuongvy1451.github.io/graduation-invitation/images/cover.png">
 </head>
 
 <body>
@@ -47,12 +62,12 @@
                 MỘT ĐIỀU ĐẶC BIỆT
             </span>
 
-            <h1>
+            <h1 id="titleEnvelope">
                 Bạn có một<br>
                 chiếc thư mời
             </h1>
 
-            <p>
+            <p id="envelopeMessage">
                 Có một điều mình muốn gửi đến bạn.
             </p>
 
@@ -218,7 +233,7 @@
                     </span>
 
                     <strong>
-                        08.09.2026
+                        03.10.2026
                     </strong>
 
                 </div>
@@ -235,7 +250,7 @@
                     </span>
 
                     <strong>
-                        08:00
+                        09:00 - 10:00
                     </strong>
 
                     <small>
@@ -276,7 +291,7 @@
 
                     <a href="tel:0934964623" class="contact-item">
                         <span class="contact-icon">
-                            📞
+                            <i class="fa-solid fa-phone"></i>
                         </span>
 
                         <span>
@@ -336,7 +351,7 @@
             <div class="button-group">
 
                 <button class="btn btn-primary" onclick="openRSVP()">
-                    💗 SẼ ĐẾN NHA
+                    💗 XÁC NHẬN THAM DỰ
                 </button>
 
                 <a class="btn btn-secondary"
@@ -418,7 +433,7 @@
                 <div class="rsvp-field">
 
                     <label for="rsvpContact">
-                        BẠN MUỐN MÌNH LIÊN HỆ QUA GÌ NÈ?
+                        CHO MÌNH XIN THÔNG TIN LIÊN HỆ NHA
                     </label>
 
                     <input type="text" id="rsvpContact" name="contact" placeholder="SĐT/FB hoặc gì cũng được nha"
@@ -497,7 +512,7 @@
 
                 <!-- SUBMIT -->
                 <button type="submit" class="rsvp-submit">
-                    💗 XÁC NHẬN
+                    💗 XÁC NHẬN 💗
                 </button>
 
             </form>
