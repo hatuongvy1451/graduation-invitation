@@ -931,10 +931,10 @@ const guestTypes = {
       "💗 Chú Mến và Dì Trinh đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
 
     titleEnvelope:
-      "Chú Mến và Dì Trinh có một<br>chiếc thư mời",
+      "Gia đình Chú Mến và Dì Trinh có một<br>chiếc thư mời",
 
     envelopeMessage:
-      "Có một điều đặc biệt con muốn gửi đến chú và dì!",
+      "Có một điều đặc biệt con muốn gửi đến gia đình chú và dì!",
 
     invitation:
       "Dạ con mời chú và dì, bé Na, Bo đến chung vui cùng con trong ngày tốt nghiệp nhé.",
