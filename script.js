@@ -601,10 +601,10 @@ const guestTypes = {
       "Cảm ơn bà đã đến chung vui cùng tui nha. Iu lắm!!!",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+      "Mai ơiii, vậy là 4,5 năm đại học cũng đã kết thúc rồi. Tiếc cái là ngày tốt nghiệp của tui và Nga lại trùng ngày, trùng luôn cả giờ nữa chứ. Hôm đó mà có bà ở bên cạnh chung vui cùng tui thì tui vui lắm luôn á, mặc dù không đủ 3 đứa mình nhưng có bà ở đó tui hạnh phúc lắm. Không cần gì nhiều đâu, chỉ cần bà đến, mình gặp nhau, nói chuyện, chụp 7749 tấm hình rồi cùng nhau lưu lại một kỷ niệm thật đẹp nha.",
 
     message2:
-      "Bà đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Chí cốt của tui!!!"
+      "Bà cứ đi dự lễ của Nga trước nha, đừng rối hay lo phải chạy qua chạy lại giữa hai đứa tui nè. Nếu xong xuôi còn thời gian thì ghé qua tui chơi, còn không cũng hong sao hết á. Tụi mình hẹn một bữa khác quẩy tưng bừng, ăn mừng tốt nghiệp, nói tùm lum chuyện và chụp thêm 7749 tấm hình cùng nhau nhaaa. Chí cốt của tui!!!"
   },
 
   // N
@@ -634,10 +634,10 @@ const guestTypes = {
       "Cảm ơn bà đã đến chung vui cùng tui nha. Iu lắm!!!",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có bà ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+      "Nga ơiii, vậy là những năm tháng đại học của tụi mình cũng đã khép lại rồi. Mà buồn cái là ngày tốt nghiệp của hai đứa mình lại trùng ngày, trùng luôn cả giờ nữa chứ. Tiếc ghê, không thể có mặt trong ngày đặc biệt của nhau được.",
 
     message2:
-      "Bà đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Chí cốt của tui!!!"
+      "Thôi thì hôm đó mỗi đứa tận hưởng ngày tốt nghiệp của mình nha. Rồi hẹn nhau một bữa khác, tụi mình phải quẩy, ăn mừng tốt nghiệp, nói tùm lum chuyện, chụp 7749 tấm hình bù lại mới được đó. Chúc mừng tốt nghiệp Nga nha, hẹn ngày lên kèo quẩy tưng bừng nhen!!! Chí cốt của tui!!!"
   },
 
   // TT
@@ -1033,14 +1033,14 @@ let rsvpGuestNumber = 1;
 /* MỞ FORM */
 
 function openRSVP() {
-    const { type } = getGuestInfo();
+  const { type } = getGuestInfo();
 
-    if (type === "F" || type === "UM") {
-        showThankYou();
-        return;
-    }
+  if (type === "F" || type === "UM") {
+    showThankYou();
+    return;
+  }
 
-    document.getElementById("rsvpPopup").classList.add("show");
+  document.getElementById("rsvpPopup").classList.add("show");
 }
 
 
