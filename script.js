@@ -1040,7 +1040,15 @@ function openRSVP() {
     return;
   }
 
-  document.getElementById("rsvpPopup").classList.add("show");
+  const popup = document.getElementById("rsvpPopup");
+
+  if (!popup) return;
+
+  // Hiện popup
+  popup.classList.add("show");
+
+  // Khóa scroll trang phía sau
+  document.body.style.overflow = "hidden";
 }
 
 
