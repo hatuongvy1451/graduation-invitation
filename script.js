@@ -949,7 +949,7 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Chú Mến và Dì Trinh ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha ạ.",
     message2:
       "Gia đình chú và dì có thời gian thì đến với con nha. Ngoài gia đình, chú và dì cũng là người đã chứng kiến từng bước con trưởng thành đến bây giờ, bé Na và Bo là 2 đứa em dễ thương). Có mọi người bên cạnh, con rất là vui và hạnh phúc lắm."
-  },
+  }
 };
 
 
