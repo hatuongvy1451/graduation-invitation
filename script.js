@@ -637,7 +637,7 @@ const guestTypes = {
       "Nga ơiii, vậy là những năm tháng đại học của tụi mình cũng đã khép lại rồi. Mà buồn cái là ngày tốt nghiệp của hai đứa mình lại trùng ngày, trùng luôn cả giờ nữa chứ. Tiếc ghê, không thể có mặt trong ngày đặc biệt của nhau được.",
 
     message2:
-      "Thôi thì hôm đó mỗi đứa tận hưởng ngày tốt nghiệp của mình nha. Rồi hẹn nhau một bữa khác, tụi mình phải quẩy, ăn mừng tốt nghiệp, nói tùm lum chuyện, chụp 7749 tấm hình bù lại mới được đó. Chúc mừng tốt nghiệp Nga nha, hẹn ngày lên kèo quẩy tưng bừng nhen!!! Chí cốt của tui!!!"
+      "Thôi thì hôm đó mỗi đứa tận hưởng ngày tốt nghiệp của mình nha. Nếu có thời gian ghé tui nha hoặc tui ghé bà nè. Còn hong được thì mình hẹn nhau một bữa khác, tụi mình phải quẩy, ăn mừng tốt nghiệp, nói tùm lum chuyện, chụp 7749 tấm hình bù lại mới được đó. Chúc mừng tốt nghiệp Nga nha, hẹn ngày lên kèo quẩy tưng bừng nhen!!! Chí cốt của tui!!!"
   },
 
   // TT
