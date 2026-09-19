@@ -832,6 +832,38 @@ const guestTypes = {
       "Ý đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có Ý ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó. Và tui đợi ngày tốt nghiệp của Ý nha hihi!!!"
   },
 
+  // B
+  B: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Bích... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
+    titleEnvelope:
+      "Bích ơi,<br>mở thư nè!",
+
+    envelopeMessage:
+      "Có một lời mời nhỏ mà tui muốn gửi đến Bích!",
+
+    invitation:
+      "Tui mời Bích đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Bích nha!",
+
+    thankYou:
+      "Cảm ơn Bích đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Tui muốn ngày hôm đó có Bích ở đó để cùng tui ăn mừng, chụp 7749 tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+    message2:
+      "Bích đến nha. Không cần gì nhiều đâu, chỉ cần mình gặp nhau, nói chuyện, chụp hình rồi cùng tui tận hưởng ngày này nha. Có bà ở đó thì ngày tốt nghiệp của tui sẽ vui hơn nhiều lắm đó."
+  },
+
   // F
   F: {
     messageButton:
@@ -847,7 +879,7 @@ const guestTypes = {
       "Có một điều đặc biệt con muốn gửi đến cả gia đình mình!",
 
     invitation:
-      "Dạ con mời gia đình của con đến chung vui cùng con trong ngày tốt nghiệp nhé.",
+      "Dạ con mời bà ngoại, ba mẹ, dượng/dì ba, cậu út, bé Bon/Ti đến chung vui cùng con trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
       "Con hẹn gặp cả nhà mình ạ!",
@@ -888,6 +920,35 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Út Mi ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
       "Út Mi có thời gian thì đến với con nha. Có Út Mi bên cạnh con rất là vui và hạnh phúc lắm. Con yêu cô út của con!!!"
+  },
+
+  // MT
+  MT: {
+    messageButton:
+      "♡ Có điều con muốn nói với Chú Mến và Dì Trinh... Nhấn vào để mở ra đọc nha ạ ♡",
+
+    messageButtonClose:
+      "💗 Chú Mến và Dì Trinh đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
+
+    titleEnvelope:
+      "Chú Mến và Dì Trinh có một<br>chiếc thư mời",
+
+    envelopeMessage:
+      "Có một điều đặc biệt con muốn gửi đến chú và dì!",
+
+    invitation:
+      "Dạ con mời chú và dì, bé Na, Bo đến chung vui cùng con trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp chú và dì cũng như bé Na và Bo nha!",
+
+    thankYou:
+      "Cảm ơn gia đình chú và dì đã đến chung vui cùng con ạ.",
+
+    message1:
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Chú Mến và Dì Trinh ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha ạ.",
+    message2:
+      "Gia đình chú và dì có thời gian thì đến với con nha. Ngoài gia đình, chú và dì cũng là người đã chứng kiến từng bước con trưởng thành đến bây giờ, bé Na và Bo là 2 đứa em dễ thương). Có mọi người bên cạnh, con rất là vui và hạnh phúc lắm."
   },
 };
 
@@ -1021,6 +1082,17 @@ function renderGuestName() {
         guest
       );
   }
+
+  // Thời gian tham dự
+  const graduationTime = document.getElementById("graduationTime");
+
+  if (graduationTime) {
+    if (type === "F" || type === "UM" || type === "MT") {
+      graduationTime.textContent = "09:00 - 11:00";
+    } else {
+      graduationTime.textContent = "09:30 - 11:00";
+    }
+  }
 }
 
 /* =================================================
@@ -1035,7 +1107,7 @@ let rsvpGuestNumber = 1;
 function openRSVP() {
   const { type } = getGuestInfo();
 
-  if (type === "F" || type === "UM") {
+  if (type === "F" || type === "UM" || type === "MT") {
     showThankYou();
     return;
   }
