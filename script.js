@@ -919,7 +919,7 @@ const guestTypes = {
     message1:
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Út Mi ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
     message2:
-      "Út Mi có thời gian thì đến với con nha. Có Út Mi bên cạnh con rất là vui và hạnh phúc lắm. Con yêu cô út của con!!!"
+      "Út Mi có thời gian thì đến với con nha. Có Út Mi bên cạnh con rất là vui và hạnh phúc lắm. Nếu út có việc bận không lên được cũng hong sao nha ạ. 2 cô cháu mình còn nhiều thời gian gặp nhau hihi. Con yêu cô út của con!!!"
   },
 
   // MT
