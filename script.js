@@ -1218,12 +1218,12 @@ function submitRSVP(event) {
   const contact = document.getElementById("rsvpContact").value.trim();
 
   if (!name) {
-    alert("Vui lòng nhập tên của bạn nha 💗");
+    showToast("Vui lòng nhập tên của bạn nha 💗");
     return;
   }
 
   if (!contact) {
-    alert("Vui lòng nhập thông tin liên hệ nha 💗");
+    showToast("Vui lòng nhập thông tin liên hệ nha 💗");
     return;
   }
 
@@ -1274,7 +1274,7 @@ function submitRSVP(event) {
           B: "Hong sao nha Bích, cảm ơn Bích đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
         };
 
-        alert(
+        showToast(
           messages[type] || messages.A
         );
       }
@@ -1287,7 +1287,7 @@ function submitRSVP(event) {
 
       console.error("EmailJS Error:", error);
 
-      alert(
+      showToast(
         "Không gửi được thông tin. Bạn thử lại giúp mình nha 💗"
       );
     });
@@ -1347,4 +1347,28 @@ function toggleMessage() {
     button.textContent =
       guestType.messageButton;
   }
+}
+
+function showToast(message) {
+
+  const toast =
+    document.getElementById("customToast");
+
+  const text =
+    document.getElementById("toastText");
+
+
+  if (!toast || !text) return;
+
+
+  text.textContent = message;
+
+  toast.classList.add("show");
+
+
+  setTimeout(() => {
+
+    toast.classList.remove("show");
+
+  }, 3500);
 }

@@ -4336,3 +4336,64 @@ button {
 .location-link:hover {
     color: #85464b;
 }
+
+.custom-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+
+    transform: translateX(-50%) translateY(100px);
+
+    width: min(380px, calc(100% - 40px));
+
+    padding: 18px 22px;
+
+    background: #fff8fa;
+    border: 1px solid rgba(231,165,183,.35);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(80,45,60,.15);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .35s ease;
+
+    z-index: 10000;
+
+    text-align: center;
+}
+
+
+.custom-toast.show {
+
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+.toast-icon {
+    font-size: 24px;
+}
+
+
+.custom-toast p {
+
+    margin: 0;
+
+    color: #8b5367;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
