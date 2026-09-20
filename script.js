@@ -381,7 +381,7 @@ function showThankYou() {
     thankYouText.textContent =
       guestType.thankYou.replace(
         "{guest}",
-        guest 
+        guest
       );
   }
 
@@ -1240,13 +1240,33 @@ function submitRSVP(event) {
 
       console.log("Gửi xác nhận thành công!");
 
-      // Đóng form xác nhận
+
+      // Lấy trạng thái tham dự
+      const attendance =
+        document.querySelector(
+          'input[name="attendance"]:checked'
+        ).value;
+
+
+      // Đóng form
       closeRSVP();
 
-      // Hiện popup cảm ơn
-      showThankYou();
 
-      // Xóa dữ liệu form
+      // Nếu đi thì hiện popup cảm ơn
+      if (attendance === "Có, chắc chắn rồi") {
+
+        showThankYou();
+
+      } else {
+
+        alert(
+          "Cảm ơn bạn đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nhenn!"
+        );
+
+      }
+
+
+      // Reset form
       form.reset();
 
     })
