@@ -3193,7 +3193,6 @@ button {
     padding: 20px;
 
     background: rgba(70, 45, 55, 0.28);
-    backdrop-filter: blur(8px);
 
     opacity: 0;
     visibility: hidden;
