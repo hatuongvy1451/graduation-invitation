@@ -4339,14 +4339,15 @@ button {
 
 .custom-toast {
     position: fixed;
-    left: 50%;
-    bottom: 30px;
 
-    transform: translateX(-50%) translateY(100px);
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -40%) scale(.9);
 
     width: min(380px, calc(100% - 40px));
 
-    padding: 18px 22px;
+    padding: 20px 24px;
 
     background: #fff8fa;
     border: 1px solid rgba(231,165,183,.35);
@@ -4358,6 +4359,7 @@ button {
 
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
 
     opacity: 0;
@@ -4377,10 +4379,9 @@ button {
     visibility: visible;
 
     transform:
-        translateX(-50%)
-        translateY(0);
+        translate(-50%, -50%)
+        scale(1);
 }
-
 
 .toast-icon {
     font-size: 24px;
