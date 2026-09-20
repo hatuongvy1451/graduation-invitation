@@ -1102,27 +1102,58 @@ function renderGuestName() {
 let rsvpGuestNumber = 1;
 
 
+/* GỬI EMAIL XÁC NHẬN TRỰC TIẾP */
+
+async function sendDirectRSVP() {
+  const { type } = getGuestInfo();
+
+  const guestNames = {
+    F: "Gia đình là số 1",
+    UM: "Út Mi",
+    MT: "Gia đình Chú Mến và Dì Trinh"
+  };
+
+  const templateParams = {
+    guest_name: guestNames[type],
+    guest_type: type,
+    attendance: "Xác nhận tham dự",
+    submitted_at: new Date().toLocaleString("vi-VN")
+  };
+
+  return emailjs.send(
+    "service_wvbf5le",
+    "template_f71oqss",
+    templateParams
+  );
+}
+
 /* MỞ FORM */
 
 function openRSVP() {
   const { type } = getGuestInfo();
 
-  if (type === "F" || type === "UM" || type === "MT") {
+  if (["F", "UM", "MT"].includes(type)) {
+    // Hiện Thank You ngay lập tức
     showThankYou();
+
+    // Gửi email ngầm, không chờ kết quả
+    sendDirectRSVP()
+      .then(() => {
+        console.log("Gửi xác nhận thành công!");
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+      });
+
     return;
   }
 
   const popup = document.getElementById("rsvpPopup");
-
   if (!popup) return;
 
-  // Hiện popup
   popup.classList.add("show");
-
-  // Khóa scroll trang phía sau
   document.body.style.overflow = "hidden";
 }
-
 
 /* ĐÓNG FORM */
 
