@@ -3201,6 +3201,8 @@ button {
     transition:
         opacity .3s ease,
         visibility .3s ease;
+
+    will-change: opacity;
 }
 
 .rsvp-overlay.show {
@@ -3234,14 +3236,23 @@ button {
         0 30px 80px rgba(80, 45, 60, .18),
         0 8px 25px rgba(225, 155, 175, .10);
 
+    opacity: 0;
+
     transform:
-        translateY(25px) scale(.92);
+        translateY(15px) scale(.98);
 
     transition:
-        transform .4s cubic-bezier(.17, .67, .35, 1.25);
+        opacity .25s ease,
+        transform .25s ease;
+
+    will-change: transform, opacity;
 }
 
+
 .rsvp-overlay.show .rsvp-popup {
+
+    opacity: 1;
+
     transform:
         translateY(0) scale(1);
 }
