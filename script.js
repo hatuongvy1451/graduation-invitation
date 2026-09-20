@@ -445,6 +445,16 @@ function showThankYou() {
       thankYouMessage.textContent =
         "Con hẹn gặp Út Mi tại ngày đặc biệt này nha!";
     }
+
+    else if (type === "MT") {
+      thankYouMessage.textContent =
+        "Con hẹn gặp gia đình chú và dì tại ngày đặc biệt này nha!";
+    }
+
+    else if (type === "B") {
+      thankYouMessage.textContent =
+        "Hẹn gặp Bích tại ngày đặc biệt này nha!";
+    }
   }
 
 
