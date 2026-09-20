@@ -1253,38 +1253,30 @@ function submitRSVP(event) {
 
         showThankYou();
 
+      } if (attendance === "Có, chắc chắn rồi") {
+
+        showThankYou();
+
       } else {
 
-        const thankYouTitle =
-          document.getElementById("thankYouTitle");
+        const { type } = getGuestInfo();
 
-        const thankYouText =
-          document.getElementById("thankYouText");
+        const messages = {
+          A: "Hong sao nha, cảm ơn m đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nhenn!",
+          M: "Hong sao nha, cảm ơn bà đã phản hồi nha 💗 Hẹn dịp khác tụi mình gặp nhau nha!",
+          N: "Hong sao nha, cảm ơn bà đã phản hồi nha 💗 Hẹn dịp khác tụi mình gặp nhau nha!",
+          TT: "Hong sao nha Tiến, cảm ơn Tiến đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          GL: "Hong sao nha Gia Linh, cảm ơn Gia Linh đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          NL: "Hong sao nha Ngọc Linh, cảm ơn Ngọc Linh đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          T: "Hong sao nha Trang, cảm ơn Trang đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          H: "Hong sao nha Hạnh, cảm ơn Hạnh đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          Y: "Hong sao nha Ý, cảm ơn Ý đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          B: "Hong sao nha Bích, cảm ơn Bích đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+        };
 
-        const thankYouMessage =
-          document.querySelector(".thankyou-message span");
-
-
-        if (thankYouTitle) {
-          thankYouTitle.textContent =
-            "Cảm ơn bạn đã phản hồi nha 💗";
-        }
-
-        if (thankYouText) {
-          thankYouText.innerHTML =
-            "Mình đã nhận được phản hồi của bạn rồi.<br>Hẹn dịp khác mình gặp nhau nha!";
-        }
-
-        if (thankYouMessage) {
-          thankYouMessage.textContent =
-            "Chúc bạn thật nhiều niềm vui và may mắn nha 🌷";
-        }
-
-        document
-          .getElementById("thankYouPopup")
-          .classList.add("show");
-
-        document.body.style.overflow = "hidden";
+        alert(
+          messages[type] || messages.A
+        );
       }
 
       // Reset form
