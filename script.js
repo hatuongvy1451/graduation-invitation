@@ -436,14 +436,9 @@ function showThankYou() {
       thankYouMessage.textContent =
         "Hẹn gặp Ý tại ngày đặc biệt này nha!";
 
-    } else if (type === "F") {
+    } else if (type === "F" || type === "FN") {
       thankYouMessage.textContent =
         "Con hẹn gặp cả nhà mình tại ngày đặc biệt này nha!";
-    }
-
-    else if (type === "UM") {
-      thankYouMessage.textContent =
-        "Con hẹn gặp Út Mi tại ngày đặc biệt này nha!";
     }
 
     else if (type === "MT") {
@@ -903,33 +898,34 @@ const guestTypes = {
       "Cả nhà đến nha. Có gia đình bên cạnh con rất là vui và hạnh phúc lắm. Gia đình là số 1 của con!!!"
   },
 
-  // UM
-  UM: {
+  // FN
+  FN: {
     messageButton:
-      "♡ Có điều con muốn nói với Út Mi... Nhấn vào để mở ra đọc nha ạ ♡",
+      "♡ Có điều con muốn nói với đại gia đình mình... Nhấn vào để mở ra đọc nha ạ ♡",
 
     messageButtonClose:
-      "💗 Út Mi đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
+      "💗 Gia đình mình đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
 
     titleEnvelope:
-      "Út Mi có một<br>chiếc thư mời",
+      "Gia đình ta có một<br>chiếc thư mời",
 
     envelopeMessage:
-      "Có một điều đặc biệt con muốn gửi đến Út Mi!",
+      "Có một điều đặc biệt con muốn gửi đến cả nhà mình!",
 
     invitation:
-      "Dạ con mời Út Mi đến chung vui cùng con trong ngày tốt nghiệp nhé.",
+      "Dạ con mời ông bà nội cùng đại gia đình đến chung vui cùng con trong ngày tốt nghiệp nhé.",
 
     thankYouTitle:
-      "Hẹn gặp Út Mi nha!",
+      "Con hẹn gặp gia đình mình nha!",
 
     thankYou:
-      "Cảm ơn Út Mi đã đến chung vui cùng con ạ.",
+      "Cảm ơn ông bà nội cùng đại gia đình đã đến chung vui cùng con ạ.",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Út Mi ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha.",
+      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con mong ngày hôm đó có gia đình ở bên cạnh để cùng con ăn mừng, chụp thật nhiều tấm hình và lưu lại những kỷ niệm thật đẹp trong ngày đặc biệt này nha ạ.",
+
     message2:
-      "Út Mi có thời gian thì đến với con nha. Có Út Mi bên cạnh con rất là vui và hạnh phúc lắm. Nếu út có việc bận không lên được cũng hong sao nha ạ. 2 cô cháu mình còn nhiều thời gian gặp nhau hihi. Con yêu cô út của con!!!"
+      "Con rất mong đại gia đình của con có thể đến chung vui cùng con. Sự hiện diện của ông bà nội và mọi người trong gia đình là niềm vui, niềm hạnh phúc rất lớn đối với con. Con cảm ơn gia đình mình đã luôn yêu thương, quan tâm và đồng hành cùng con trong suốt chặng đường con lớn lên và trưởng thành. Hẹn gặp gia đình nội trong ngày đặc biệt này nha ạ ❤️"
   },
 
   // MT
@@ -1097,7 +1093,7 @@ function renderGuestName() {
   const graduationTime = document.getElementById("graduationTime");
 
   if (graduationTime) {
-    if (type === "F" || type === "UM" || type === "MT") {
+    if (type === "F" || type === "FN" || type === "MT") {
       graduationTime.textContent = "09:00 - 11:00";
     } else {
       graduationTime.textContent = "09:30 - 11:00";
@@ -1119,7 +1115,7 @@ async function sendDirectRSVP() {
 
   const guestNames = {
     F: "Gia đình là số 1",
-    UM: "Út Mi",
+    FN: "Gia đình ta",
     MT: "Gia đình Chú Mến và Dì Trinh"
   };
 
@@ -1142,7 +1138,7 @@ async function sendDirectRSVP() {
 function openRSVP() {
   const { type } = getGuestInfo();
 
-  if (["F", "UM", "MT"].includes(type)) {
+  if (["F", "FN", "MT"].includes(type)) {
 
     showThankYou();
 
