@@ -919,13 +919,13 @@ const guestTypes = {
       "Con hẹn gặp gia đình mình nha!",
 
     thankYou:
-      "Cảm ơn ông bà nội cùng đại gia đình đã đến chung vui cùng con ạ.",
+      "Cảm ơn đại gia đình đã đến chung vui cùng con ạ.",
 
     message1:
       "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con mong ngày hôm đó có gia đình ở bên cạnh để cùng con ăn mừng, chụp thật nhiều tấm hình và lưu lại những kỷ niệm thật đẹp trong ngày đặc biệt này nha ạ.",
 
     message2:
-      "Con rất mong đại gia đình của con có thể đến chung vui cùng con. Sự hiện diện của ông bà nội và mọi người trong gia đình là niềm vui, niềm hạnh phúc rất lớn đối với con. Con cảm ơn gia đình mình đã luôn yêu thương, quan tâm và đồng hành cùng con trong suốt chặng đường con lớn lên và trưởng thành. Hẹn gặp gia đình nội trong ngày đặc biệt này nha ạ ❤️"
+      "Con rất mong đại gia đình của con có thể đến chung vui cùng con. Gia đình mình sắp xếp được lên Sài Gòn chơi với con nha ạ. Sự hiện diện của ông bà nội và mọi người trong gia đình là niềm vui, niềm hạnh phúc rất lớn đối với con. Con cảm ơn gia đình mình đã luôn yêu thương, quan tâm và đồng hành cùng con trong suốt chặng đường con lớn lên và trưởng thành. Hẹn gặp gia đình nội trong ngày đặc biệt này nha ạ ❤️"
   },
 
   // MT
