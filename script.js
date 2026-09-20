@@ -946,9 +946,9 @@ const guestTypes = {
       "Cảm ơn gia đình chú và dì đã đến chung vui cùng con ạ.",
 
     message1:
-      "Vậy là 4,5 năm đại học cũng đã tới lúc kết thúc rồi. Con muốn ngày hôm đó có Chú Mến và Dì Trinh ở đó để cùng con ăn mừng, chụp cả ngàn tấm hình và lưu lại thật nhiều kỷ niệm tươi đẹp cùng nhau nha ạ.",
+      "Vậy là 4,5 năm đại học cũng đã tới lúc khép lại rồi. Con mong ngày đặc biệt này có Chú Mến, Dì Trinh cùng bé Na và Bo đến chung vui, cùng con ăn mừng, chụp thật nhiều hình và lưu lại những kỷ niệm thật đẹp bên nhau.",
     message2:
-      "Gia đình chú và dì có thời gian thì đến với con nha. Ngoài gia đình, chú và dì cũng là người đã chứng kiến từng bước con trưởng thành đến bây giờ, bé Na và Bo là 2 đứa em dễ thương). Có mọi người bên cạnh, con rất là vui và hạnh phúc lắm."
+      "Nếu có thời gian, con rất mong gia đình mình sẽ đến dự cùng con. Chú Mến và Dì Trinh cũng là người đã chứng kiến con trưởng thành qua từng chặng đường, nên sự hiện diện của gia đình mình trong ngày này sẽ là niềm vui và hạnh phúc rất lớn đối với con. Con cũng mong được gặp hai đứa em Na và Bo đáng yêu nữa!"
   }
 };
 

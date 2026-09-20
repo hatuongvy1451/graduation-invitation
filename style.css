@@ -4272,7 +4272,7 @@ button {
 
 #titleEnvelope {
     font-family: 'Dancing Script', cursive;
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 600;
     color: var(--rose-dark);
     line-height: 1.4;
@@ -4314,4 +4314,16 @@ button {
     font-size: 12px;
     line-height: 1.6;
     color: #8a7b70;
+}
+
+.location-link {
+    color: #a85f63;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.location-link:hover {
+    color: #85464b;
 }
