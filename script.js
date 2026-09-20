@@ -381,7 +381,7 @@ function showThankYou() {
     thankYouText.textContent =
       guestType.thankYou.replace(
         "{guest}",
-        guest
+        guest 
       );
   }
 
@@ -941,7 +941,7 @@ const guestTypes = {
       "💗 Chú Mến và Dì Trinh đọc xong rồi có thể nhấn vào đây để đóng lại nha ạ",
 
     titleEnvelope:
-      "Gia đình Chú Mến và Dì Trinh có một<br>chiếc thư mời",
+      "Gia đình Chú Mến & Dì Trinh có một<br>chiếc thư mời",
 
     envelopeMessage:
       "Có một điều đặc biệt con muốn gửi đến gia đình chú và dì!",
