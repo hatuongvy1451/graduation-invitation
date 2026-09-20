@@ -1133,10 +1133,9 @@ function openRSVP() {
   const { type } = getGuestInfo();
 
   if (["F", "UM", "MT"].includes(type)) {
-    // Hiện Thank You ngay lập tức
+
     showThankYou();
 
-    // Gửi email ngầm, không chờ kết quả
     sendDirectRSVP()
       .then(() => {
         console.log("Gửi xác nhận thành công!");
@@ -1149,10 +1148,18 @@ function openRSVP() {
   }
 
   const popup = document.getElementById("rsvpPopup");
+
   if (!popup) return;
 
+
+  // mở popup trước
   popup.classList.add("show");
-  document.body.style.overflow = "hidden";
+
+
+  // khóa scroll sau một chút
+  setTimeout(() => {
+    document.body.style.overflow = "hidden";
+  }, 300);
 }
 
 /* ĐÓNG FORM */
