@@ -1255,12 +1255,37 @@ function submitRSVP(event) {
 
       } else {
 
-        alert(
-          "Cảm ơn bạn đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nhenn!"
-        );
+        const thankYouTitle =
+          document.getElementById("thankYouTitle");
 
+        const thankYouText =
+          document.getElementById("thankYouText");
+
+        const thankYouMessage =
+          document.querySelector(".thankyou-message span");
+
+
+        if (thankYouTitle) {
+          thankYouTitle.textContent =
+            "Cảm ơn bạn đã phản hồi nha 💗";
+        }
+
+        if (thankYouText) {
+          thankYouText.innerHTML =
+            "Mình đã nhận được phản hồi của bạn rồi.<br>Hẹn dịp khác mình gặp nhau nha!";
+        }
+
+        if (thankYouMessage) {
+          thankYouMessage.textContent =
+            "Chúc bạn thật nhiều niềm vui và may mắn nha 🌷";
+        }
+
+        document
+          .getElementById("thankYouPopup")
+          .classList.add("show");
+
+        document.body.style.overflow = "hidden";
       }
-
 
       // Reset form
       form.reset();
