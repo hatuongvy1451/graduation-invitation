@@ -450,6 +450,11 @@ function showThankYou() {
       thankYouMessage.textContent =
         "Hẹn gặp Bích tại ngày đặc biệt này nha!";
     }
+
+    else if (type === "AA") {
+      thankYouMessage.textContent = 
+        "Hẹn gặp Ánh tại ngày đặc biệt này nha!";
+    }
   }
 
 
@@ -955,6 +960,39 @@ const guestTypes = {
       "Vậy là 4,5 năm đại học cũng đã tới lúc khép lại rồi. Con mong ngày đặc biệt này có Chú Mến, Dì Trinh cùng bé Na và Bo đến chung vui, cùng con ăn mừng, chụp thật nhiều hình và lưu lại những kỷ niệm thật đẹp bên nhau.",
     message2:
       "Nếu có thời gian, con rất mong gia đình mình sẽ đến dự cùng con. Chú Mến và Dì Trinh cũng là người đã chứng kiến con trưởng thành qua từng chặng đường, nên sự hiện diện của gia đình mình trong ngày này sẽ là niềm vui và hạnh phúc rất lớn đối với con. Con cũng mong được gặp hai đứa em Na và Bo đáng yêu nữa!"
+  },
+
+  // AA
+  AA: {
+    messageButton:
+      "♡ Có điều tui muốn nói với Ánh... Nhấn vào để mở ra đọc nha ♡",
+
+    messageButtonClose:
+      "💗 Đọc xong rồi có thể nhấn vào đây để đóng lại nha",
+
+    rsvpDescription:
+      "Cho tui xin một chút thông tin để chuẩn bị chu đáo hơn nha. Mặc dù tui biết hết rồi nhưng vẫn phải hỏi cho đúng thủ tục hehe!!!",
+
+    titleEnvelope:
+      "Ánh ơi,<br>mở thư nè!",
+
+    envelopeMessage:
+      "Có một lời mời nhỏ mà tui muốn gửi đến Ánh!",
+
+    invitation:
+      "Tui mời Ánh đến chung vui cùng tui trong ngày tốt nghiệp nhé.",
+
+    thankYouTitle:
+      "Hẹn gặp Ánh nha!",
+
+    thankYou:
+      "Cảm ơn Ánh đã đến chung vui cùng tui nha.",
+
+    message1:
+      "Ánh ơiii, vậy là 4,5 năm đại học của tui cũng đã tới lúc kết thúc rồi. Lâu lắm rồi tụi mình chưa có dịp liên lạc hay gặp nhau, nhưng mỗi khi nhớ lại những kỷ niệm ngày trước, tui vẫn thấy vui và nhớ những khoảng thời gian tụi mình từng có với nhau. Vậy mà giờ mỗi đứa cũng đã đi qua một chặng đường dài rồi, nhanh ghê ha.",
+
+    message2:
+      "Tiếc là ngày tốt nghiệp của tụi mình lại trùng ngày, trùng luôn cả giờ nên không thể qua dự lễ của nhau được rồi huhu. Nhưng tui vẫn muốn gửi lời mời này đến Ánh, Ánh là người bạn tui rất trân trọng đó, có thời gian ghé tui chơi nha, hong cũng hong sao nè. Nếu có dịp, mình gặp nhau nha, ngồi nói chuyện, kể nhau nghe về cuộc sống dạo này và cùng nhau ôn lại những chuyện cũ. Chúc Ánh tốt nghiệp thật vui và có một ngày thật đáng nhớ nha! 💗"
   }
 };
 
@@ -1272,6 +1310,7 @@ function submitRSVP(event) {
           H: "Hong sao nha Hạnh, cảm ơn Hạnh đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
           Y: "Hong sao nha Ý, cảm ơn Ý đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
           B: "Hong sao nha Bích, cảm ơn Bích đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nha!",
+          AA: "Hong sao nha, cảm ơn Ánh đã phản hồi nha 💗 Hẹn dịp khác mình gặp nhau nhenn!",
         };
 
         showToast(
